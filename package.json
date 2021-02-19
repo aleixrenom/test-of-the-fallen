@@ -1,0 +1,24 @@
+{
+  "name": "bot-of-the-fallen",
+  "version": "1.0.0",
+  "description": "Discord bot for the Realm of the Fallen discord server",
+  "main": "index.js",
+  "scripts": {
+	"start": "npm start",
+    "test": "+t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleixrenom/bot-of-the-fallen.git"
+  },
+  "author": "https://github.com/aleixrenom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleixrenom/bot-of-the-fallen/issues"
+  },
+  "homepage": "https://github.com/aleixrenom/bot-of-the-fallen#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
