@@ -4,7 +4,6 @@
   "description": "Discord bot for the Realm of the Fallen discord server",
   "main": "index.js",
   "scripts": {
-	"start": "npm start",
     "test": "+t"
   },
   "repository": {
