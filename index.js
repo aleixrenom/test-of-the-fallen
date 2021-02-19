@@ -5,6 +5,12 @@ const client = new Discord.Client();
 const dotenv = require('dotenv');
 dotenv.config();
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
+
 client.once('ready', () => {
 	console.log('Ready!');
 });
