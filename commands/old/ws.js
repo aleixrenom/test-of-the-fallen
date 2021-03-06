@@ -67,10 +67,6 @@ module.exports = {
 					this.rollWeather();
 				}
 				break;
-      case "unprotectedforceroll":
-          this.rollWeather();
-          message.delete().then().catch(console.error);
-        break;
 			case "on":
 				try {
 					let data = cf.readDataFile('data');
