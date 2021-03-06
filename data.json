@@ -1,30 +1,30 @@
 {
-	"weatherSchedule": {
-	  "status": "off",
-	  "type": "Cloudy",
-	  "temperature": "-16°C / 3.2°F",
-	  "lightning": "None",
-	  "winds": "15mph (Moderate breeze)",
-	  "image": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fcloudy.png?v=1581434913920",
-	  "color": 6122878,
-	  "forecastChannel": "677627860466401339",
-	  "weatherChannel": "606037277105455125"
-	},
-	"roles": {
-	  "admin": "591587250039554071",
-	  "weatherman": "606030669436420097",
-	  "staff": "591593454665072640"
-	},
-	"rotfId": "591479901593403393",
-	"images": {
-	  "day": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fday.png?v=1581434129664",
-	  "night": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fnight.png?v=1581434159486",
-	  "clearSkies": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fclear_skies.png?v=1581434913716",
-	  "electricStorm": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Felectric_storm.png?v=1581434913874",
-	  "cloudy": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fcloudy.png?v=1581434913920",
-	  "snow": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fsnow.png?v=1581434913971",
-	  "event": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fevent.png?v=1581434914022",
-	  "rain": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Frain.png?v=1581434914397"
-	},
-	"inWorldHappeningsId": "597493552322314240"
-  }
+  "weatherSchedule": {
+    "status": "on",
+    "type": "Rain",
+    "temperature": "11°C / 51.8°F",
+    "lightning": "Severe",
+    "winds": "57mph (Storm)",
+    "image": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Frain.png?v=1581434914397",
+    "color": 14084856,
+    "forecastChannel": "677627860466401339",
+    "weatherChannel": "606037277105455125"
+  },
+  "roles": {
+    "admin": "591587250039554071",
+    "weatherman": "606030669436420097",
+    "staff": "591593454665072640"
+  },
+  "rotfId": "591479901593403393",
+  "images": {
+    "day": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fday.png?v=1581434129664",
+    "night": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fnight.png?v=1581434159486",
+    "clearSkies": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fclear_skies.png?v=1581434913716",
+    "electricStorm": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Felectric_storm.png?v=1581434913874",
+    "cloudy": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fcloudy.png?v=1581434913920",
+    "snow": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fsnow.png?v=1581434913971",
+    "event": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fevent.png?v=1581434914022",
+    "rain": "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Frain.png?v=1581434914397"
+  },
+  "inWorldHappeningsId": "597493552322314240"
+}

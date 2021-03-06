@@ -21,7 +21,7 @@ module.exports = {
 		.setColor(data.weatherSchedule.color);
 
 		// post it in the weather channel
-		cf.client.channels.get(data.weatherSchedule.weatherChannel).send(todayWeatherEmbed);
+		cf.client.channels.cache.get(data.weatherSchedule.weatherChannel).send(todayWeatherEmbed);
 
 		// roll a new weather
 		const rolledWeather = weather.getCurrentSeason().roll(); // this is an object with weather values
@@ -44,19 +44,19 @@ module.exports = {
 		.setColor(rolledWeather.color);
 
 		// post it into the weather channel
-		cf.client.channels.get(data.weatherSchedule.forecastChannel).send("**Next weather:**");
-		cf.client.channels.get(data.weatherSchedule.forecastChannel).send(tomorrowWeatherEmbed);
+		cf.client.channels.cache.get(data.weatherSchedule.forecastChannel).send("**Next weather:**");
+		cf.client.channels.cache.get(data.weatherSchedule.forecastChannel).send(tomorrowWeatherEmbed);
 
 		// save the new values to the data file
 		cf.writeDataFile(data,'data');
 	},
 	execute(message, args) {
-		// if (!message.member.roles.has(cf.readDataFile('data').roles.admin)
-		// && !message.member.roles.has(cf.readDataFile('data').roles.weatherman)) return;
+		// if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)
+		// && !message.member.roles.cache.has(cf.readDataFile('data').roles.weatherman)) return;
 
 		switch (args[0]) {
 			case "forceRoll":
-				if (!message.member.roles.has(cf.readDataFile('data').roles.admin)) {
+				if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
 					message.channel.send("This command is only avaliable to Admins.");
 					return;
 				} else {

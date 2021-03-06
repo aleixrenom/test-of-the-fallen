@@ -1,9 +1,11 @@
 // Invitation link: https://discord.com/oauth2/authorize?client_id=812291101934616587&scope=bot
 const fs = require('fs');
 const Discord = require('discord.js');
+const cf = require('./components/commonFunctions.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+cf.client = client;
 
 const commandFolders = fs.readdirSync('./commands');
 
