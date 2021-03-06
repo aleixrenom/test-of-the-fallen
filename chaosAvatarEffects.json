@@ -1,0 +1,747 @@
+{
+	"avatarEffectsTable": [
+	  {
+		"roll": 1,
+		"effect": "Fireworks appear around you for this round.",
+		"rolls": []
+	  },
+	  {
+		"roll": 2,
+		"effect": "You are affected by Invisibility.",
+		"rolls": []
+	  },
+	  {
+		"roll": 3,
+		"effect": "After the end of your turn and until your next turn your body breaks into a myriad of little spheres of void energy. Any attack roll against you while in the broken shape has disadvantage.",
+		"rolls": []
+	  },
+	  {
+		"roll": 4,
+		"effect": "You can choose a creature within 120ft of you to make a strength saving throw or be pulled to melee range by a Void tentacle. A creature can willingly fail the saving throw.",
+		"rolls": []
+	  },
+	  {
+		"roll": 5,
+		"effect": "A creature you can see must make a charisma saving throw or be teleported to a space on the ground that you can also see that’s no further than 120ft away from it. A creature can willingly fail the saving throw.",
+		"rolls": []
+	  },
+	  {
+		"roll": 6,
+		"effect": "You can change your appearance once as if you were affected by Alter Self. This effect stays until you revert to your original form or you dismiss it as a free action.",
+		"rolls": []
+	  },
+	  {
+		"roll": 7,
+		"effect": "Until your next turn you can move through other creatures and objects as if they were difficult terrain. You take 2d10 force damage if you end your turn inside an object.",
+		"rolls": []
+	  },
+	  {
+		"roll": 8,
+		"effect": "A Void Blade appears in an empty hand, if you already have one you can choose to get another or to give +1 to attack and damage rolls to an existing one. A Void Blade is a martial weapon with which you are considered proficient with that deals 1d8 force damage and has the versatile (1d10) property.",
+		"rolls": []
+	  },
+	  {
+		"roll": 9,
+		"effect": "You shoot a big laser of chaotic energy. Each creature in a 30ft line must make a dexterity saving throw, taking 8d10 force damage on a failure or half on a success.",
+		"rolls": [
+		  {
+			"title": "Force damage",
+			"roll": "8d10"
+		  }
+		]
+	  },
+	  {
+		"roll": 10,
+		"effect": "Until the start of your next turn you become resistant to all damage types and your resistances become immunities.",
+		"rolls": []
+	  }
+	],
+	"chaosEffectsTable": [
+	  {
+		"roll": 1,
+		"effect": "A cloud of green gas appears in a 5ft square just behind you. It has no effects other than producing a really bad smell in the area that lasts for 1 minute.",
+		"rolls": []
+	  },
+	  {
+		"roll": 2,
+		"effect": "An iron statue worth 2 units of iron appears in front of you with a shape resembling the last thought you had in your mind.",
+		"rolls": []
+	  },
+	  {
+		"roll": 3,
+		"effect": "Cheerful music starts playing from your belly. It lasts 10 minutes and while it lasts you have advantage on charisma checks to cheer up creatures that can hear it. You can stop or resume the music as a bonus action.",
+		"rolls": []
+	  },
+	  {
+		"roll": 4,
+		"effect": "You are healed 2d8HP",
+		"rolls": [
+		  {
+			"title": "Heal",
+			"roll": "2d8"
+		  }
+		]
+	  },
+	  {
+		"roll": 5,
+		"effect": "1d10gp appear in front of you.",
+		"rolls": [
+		  {
+			"title": "Gold",
+			"roll": "1d10"
+		  }
+		]
+	  },
+	  {
+		"roll": 6,
+		"effect": "You get +1d4AC for 1 hour.",
+		"rolls": [
+		  {
+			"title": "Bonus AC",
+			"roll": "1d4"
+		  }
+		]
+	  },
+	  {
+		"roll": 7,
+		"effect": "If you don't possess a Blast Stone, you obtain one with 1d6 damage. You can throw the Blast Stone at any point you can see up to 60ft away from you to force any creatures in a 20ft radius from that point to make a dexterity saving throw or take its damage as thunder damage on a failure or half on a success, subsequently destroying the Blast Stone. If you possess a Blast Stone its damage goes up by 2d6, but can't go higher than 10d6.",
+		"rolls": []
+	  },
+	  {
+		"roll": 8,
+		"effect": "You obtain 1d10 temporary HP that disappear after 1 hour.",
+		"rolls": [
+		  {
+			"title": "Temporary HP",
+			"roll": "1d10"
+		  }
+		]
+	  },
+	  {
+		"roll": 9,
+		"effect": "You puke a frog. The frog lasts for 1 hour and if you roll this while the effect is still active the hour resets. The frog is not considered a familiar, but you can control it as if it was summoned by the spell Find Familiar.",
+		"rolls": []
+	  },
+	  {
+		"roll": 10,
+		"effect": "Flowers start growing and blooming in a 10ft radius area around you. Two plants with value can be found amongst the flowers, your DM will determine which by rolling in the herbs table of our crafting doc for the appropriate biome.",
+		"rolls": []
+	  },
+	  {
+		"roll": 11,
+		"effect": "You cast a cantrip of your choice.",
+		"rolls": []
+	  },
+	  {
+		"roll": 12,
+		"effect": "The next time you hit a creature with a weapon attack before the next long rest, that creature takes an extra 2d6 force damage.",
+		"rolls": []
+	  },
+	  {
+		"roll": 13,
+		"effect": "You can shoot lasers from your eyes. As an action you can make a ranged spell attack against a target that's within 60ft of you, on a hit it takes 2d8 force damage. This damage increases by 1d8 when you reach 11th level (3d8), and 17th level (4d8). This lasts for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 14,
+		"effect": "**Enchanted coin.** Choose one coin in your possession, it becomes magical. If you flip the coin and shows heads (1), a non-magical coin of the same value appears right next to it, and if the coin shows tails (2), the coin disappears forever. If and after it shows heads 20 times, the coin disappears.",
+		"rolls": []
+	  },
+	  {
+		"roll": 15,
+		"effect": "A Goblin (MM) with its intelligence reduced to 2 appears on a point you can see within 120ft of you and starts madly attacking the closest hostile creature to him. If there is no hostile creature in sight it only defends itself to the best of its ability. The Goblin disappears when it drops to 0HP, dies or 1 minute passes.",
+		"rolls": [
+		  {
+			"title": "Roll",
+			"roll": "1d2"
+		  }
+		]
+	  },
+	  {
+		"roll": 16,
+		"effect": "You have advantage on the next attack roll you make that doesn't have advantage or impose disadvantage on the saving throw of one creature affected by the next spell you cast, whatever comes first.",
+		"rolls": []
+	  },
+	  {
+		"roll": 17,
+		"effect": "You are healed 4d8HP",
+		"rolls": [
+		  {
+			"title": "Heal",
+			"roll": "4d8"
+		  }
+		]
+	  },
+	  {
+		"roll": 18,
+		"effect": "A rush passes through your whole body. This turn you can move an extra 1d8*5 feet without provoking attacks of opportunity.",
+		"rolls": [
+		  {
+			"title": "Extra movement",
+			"roll": "1d8*5"
+		  }
+		]
+	  },
+	  {
+		"roll": 19,
+		"effect": "Roll 1d2. On a 1 you have to make a charisma saving throw or become affected by the same effects of the Philter of Love potion but with its duration reduced to 10 minutes and the effect ending if you take any damage. On a 2 the closest creature to your right hand has to make the save or become affected by the same effect.",
+		"rolls": [
+		  {
+			"title": "Roll",
+			"roll": "1d2"
+		  }
+		]
+	  },
+	  {
+		"roll": 20,
+		"effect": "You can use the 1st stage features of one of the following paths for 1 hour as if you were on that path at 1st stage: Arcane Battery, Blood Fiend, Crimson Star, Primeval Warden, Steel Heart, Voidtouched, Cursed Mark or Enlightement.",
+		"rolls": []
+	  },
+	  {
+		"roll": 21,
+		"effect": "You obtain 2d10 temporary HP that disappear after 12 hours.",
+		"rolls": [
+		  {
+			"title": "Temporary HP",
+			"roll": "2d10"
+		  }
+		]
+	  },
+	  {
+		"roll": 22,
+		"effect": "You shoot a blast of chaos energy. Make a ranged spell attack, on a hit the target takes 2d6+5 force damage.",
+		"rolls": [
+		  {
+			"title": "Force damage",
+			"roll": "2d6+5"
+		  }
+		]
+	  },
+	  {
+		"roll": 23,
+		"effect": "You have 120ft of darkvision for 12 hours if you didn't have more before.",
+		"rolls": []
+	  },
+	  {
+		"roll": 24,
+		"effect": "A magic item in the form of a little box with shimmering dark runes inscribed around it appears in front of you. This box will disappear after 12 hours, and while it lasts anyone holding it can use a bonus action to transform it into any mundane object it desires by just thinking about the object and speaking the command word, which you choose when this effect is rolled. The object created cannot be bigger than a 5ft square and can never be more than one single object, if any part is detached from the main object that part disappears.",
+		"rolls": []
+	  },
+	  {
+		"roll": 25,
+		"effect": "Roll again twice and choose one of the results.",
+		"rolls": []
+	  },
+	  {
+		"roll": 26,
+		"effect": "You cast Fireball.",
+		"rolls": []
+	  },
+	  {
+		"roll": 27,
+		"effect": "A floating greatsword appears and strikes twice at a hostile creature of your choice within 30ft with a +5 to hit and +3 damage, then disappears. If there is no hostile creature in range the sword falls to the ground as a mundane weapon without disappearing.",
+		"rolls": [
+		  {
+			"title": "First attack to hit",
+			"roll": "1d20+5"
+		  },
+		  {
+			"title": "First attack damage",
+			"roll": "2d6+3"
+		  },
+		  {
+			"title": "Second attack to hit",
+			"roll": "1d20+5"
+		  },
+		  {
+			"title": "Second attack damage",
+			"roll": "2d6+3"
+		  }
+		]
+	  },
+	  {
+		"roll": 28,
+		"effect": "**Coin of fate.** You obtain a coin made of a strange shimmering dark purple metal that on the tails side (1) has a moon and on the heads side (2) has a sun. Any creature can flip the coin as a free action at the same time they make any roll. If you do, roll an extra 1d2 and 1d6 in the roll. If the 1d2 shows 1 it means it's tails and you substract the 1d6 result from the roll, and if the 1d2 shows 2 it means it's heads and you add the 1d6 result to the roll. This coin has 10 charges and disappears when the last one is used or 48 hours have passed.",
+		"rolls": []
+	  },
+	  {
+		"roll": 29,
+		"effect": "You obtain two Chaos Permacharges. Permacharges are like normal Charges but they don't go away after a long rest.",
+		"rolls": []
+	  },
+	  {
+		"roll": 30,
+		"effect": "All your attacks and spells deal an extra 1d4 force damage for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 31,
+		"effect": "A 10ft radius sphere of pure void energy surrounds you. Any creatures except you that start their turn in the sphere must make a constitution saving throw, taking 2d6 force damage on a failure or half on a success. As an action you can move the sphere up to 60ft in any direction. The sphere disappears after 1 minute.",
+		"rolls": []
+	  },
+	  {
+		"roll": 32,
+		"effect": "You grow a long tail, half your height in length. You cannot attack with it but you can pick up objects and try to shove a creature as a bonus action. This lasts until your next long rest.",
+		"rolls": []
+	  },
+	  {
+		"roll": 33,
+		"effect": "If you don't possess a Blast Stone, you obtain one with 2d6 damage. You can throw the Blast Stone at any point you can see up to 60ft away from you to force any creatures in a 20ft radius from that point to make a dexterity saving throw or take its damage as thunder damage on a failure or half on a success, subsequently destroying the Blast Stone. If you possess a Blast Stone its damage goes up by 4d6, but can't go higher than 10d6.",
+		"rolls": []
+	  },
+	  {
+		"roll": 34,
+		"effect": "You may instantly teleport up to 1d20*5 ft",
+		"rolls": [
+		  {
+			"title": "Distance",
+			"roll": "1d20*5"
+		  }
+		]
+	  },
+	  {
+		"roll": 35,
+		"effect": "All creatures within 120ft of you have a +5 bonus to their perception checks and to their passive perception. This effect lasts for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 36,
+		"effect": "A tamed and saddled horse made of pure void energy appears next to you. It acts like a normal Riding Horse (MM) for all intents and purposes except it cannot attack. The horse lasts for 24 hours and then disappears.",
+		"rolls": []
+	  },
+	  {
+		"roll": 37,
+		"effect": "The next time you hit a creature with a weapon attack before the next long rest, that creature takes an extra 4d6 force damage.",
+		"rolls": []
+	  },
+	  {
+		"roll": 38,
+		"effect": "You start sweating profusely. You have resistance to fire damage for 1 hour. If you already have resistance, all fire damage done to you is reduced by 3.",
+		"rolls": []
+	  },
+	  {
+		"roll": 39,
+		"effect": "1d6 daggers, 1d4 shortswords and 1d2-1 greatswords appear in front of you and fall to the ground.",
+		"rolls": [
+		  {
+			"title": "Daggers",
+			"roll": "1d6"
+		  },
+		  {
+			"title": "Shortswords",
+			"roll": "1d4"
+		  },
+		  {
+			"title": "Greatswords",
+			"roll": "1d2-1"
+		  }
+		]
+	  },
+	  {
+		"roll": 40,
+		"effect": "1d100gp appear in front of you.",
+		"rolls": [
+		  {
+			"title": "Gold",
+			"roll": "1d100"
+		  }
+		]
+	  },
+	  {
+		"roll": 41,
+		"effect": "You shoot 1d8 Magic Missile darts at any targets of your choice within range.",
+		"rolls": [
+		  {
+			"title": "Darts",
+			"roll": "1d8"
+		  }
+		]
+	  },
+	  {
+		"roll": 42,
+		"effect": "You are healed 6d8HP",
+		"rolls": [
+		  {
+			"title": "Heal",
+			"roll": "6d8"
+		  }
+		]
+	  },
+	  {
+		"roll": 43,
+		"effect": "A magic compass appears in front of you. This compass always points to the nearest inn in the current plane of existence and just spins wildly if there is none, then disappears when you enter the inn.",
+		"rolls": []
+	  },
+	  {
+		"roll": 44,
+		"effect": "Until your next long rest you get one 1st, one 2nd and one 3rd level slot that you can fill with any spell from the sorcerer's spell list of that level or lower. This uses this path's spell save DC and spell attack bonus.",
+		"rolls": []
+	  },
+	  {
+		"roll": 45,
+		"effect": "You cast Armor of Agathys at 3rd level.",
+		"rolls": []
+	  },
+	  {
+		"roll": 46,
+		"effect": "**Coin of sight.** You obtain a platinum coin that on the tails side (1) has a closed eye engraved in it and on the heads side (2) it has a wide open eye. Any creature can flip the coin as a bonus action. If the result is tails the creature's senses' distances are divided by 4 and the normal vision becomes 120ft for 24h, and if the result is heads it instead obtains 60ft of truesight for 24 hours. This coin disappears when used or after 48h have passed.",
+		"rolls": []
+	  },
+	  {
+		"roll": 47,
+		"effect": "You obtain 3d10 temporary HP that disappear after 24 hours.",
+		"rolls": [
+		  {
+			"title": "Temporary HP",
+			"roll": "3d10"
+		  }
+		]
+	  },
+	  {
+		"roll": 48,
+		"effect": "The closest non-magical weapon to your left hand becomes magical.",
+		"rolls": []
+	  },
+	  {
+		"roll": 49,
+		"effect": "You can make any simple weapon magically appear in your empty hand as a free action 10 times before your next long rest. Weapons created in this manner are mundane, permanent weapons.",
+		"rolls": []
+	  },
+	  {
+		"roll": 50,
+		"effect": "Your eyes start shining like a beacon. They emit bright 60ft forward and dim light 30ft past that. This effect lasts for 1 hour and you can activate it and deactivate it as a reaction.",
+		"rolls": []
+	  },
+	  {
+		"roll": 51,
+		"effect": "You cast Teleport",
+		"rolls": []
+	  },
+	  {
+		"roll": 52,
+		"effect": "Two tentacles made of fire appear from your back and last for an hour. As a bonus action you can attack with both of them, they are considered whips for all calculations but deal fire damage instead of slashing.",
+		"rolls": []
+	  },
+	  {
+		"roll": 53,
+		"effect": "A Rifle (Arcane Artillery) and 4 Cartridges (10 bullets each) appear in front of you. You are considered proficient with it until your next long rest.",
+		"rolls": []
+	  },
+	  {
+		"roll": 54,
+		"effect": "Five chains appear and start magically swirling around you. The chains last for an hour, and for the duration you can use an action to throw one of the chains at a target in an attempt to grapple it. The target must make a dexterity saving throw or be grappled by the chain, any creature grappled by the chain can use an action to try to break it via an athletics check against this path's DC. Regardless of the result of the save if a chain is thrown it cannot be recovered and disappears when it’s not grappling anybody. Additionally you have a bonus to AC equal to the number of chains remaining, and whenever you are hit with an attack one of the chains is destroyed.",
+		"rolls": []
+	  },
+	  {
+		"roll": 55,
+		"effect": "Your body gets warmer and your skin turns to a more reddish color. You cannot get cold by any means, you have resistance to cold damage and are affected by the spell Dragon's Breath at 2nd level choosing fire. This lasts for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 56,
+		"effect": "You cast Charm Person on the closest creature that could be affected by it.",
+		"rolls": []
+	  },
+	  {
+		"roll": 57,
+		"effect": "You cast Command at two creatures you can see within range with the command \"Dance\".",
+		"rolls": []
+	  },
+	  {
+		"roll": 58,
+		"effect": "You only need to rest half the time you would normally need for the next long rest.",
+		"rolls": []
+	  },
+	  {
+		"roll": 59,
+		"effect": "Your jump distance is tripled for 24h",
+		"rolls": []
+	  },
+	  {
+		"roll": 60,
+		"effect": "Three Changelings (ERLW) spawn next to you, they will follow any orders you give them for the next 12 hours and will then disappear.",
+		"rolls": []
+	  },
+	  {
+		"roll": 61,
+		"effect": "A 4ft wide, 6ft high semitransparent force wall appears 3ft away from you. This wall lasts for 10 minutes and you can move it in any way you want without action required as long as it always stays 3ft away from you. If you use it as cover it's considered 3/4 cover. The wall cannot move faster than 360° around you per round. The wall has an AC of 25 and it disappears if it takes any damage.",
+		"rolls": []
+	  },
+	  {
+		"roll": 62,
+		"effect": "All durations of effects from this path that you have active refresh. If you don’t have any effects active you obtain two Chaos Permacharges. Permacharges are like normal Charges but they don't go away after a long rest.",
+		"rolls": []
+	  },
+	  {
+		"roll": 63,
+		"effect": "The closest non-magical weapon to your left hand becomes a +1 magical weapon.",
+		"rolls": []
+	  },
+	  {
+		"roll": 64,
+		"effect": "Your veins are filled with void energy and your mind with thoughts of eternal nights. You feel a big rush and are affected by the Haste spell.",
+		"rolls": []
+	  },
+	  {
+		"roll": 65,
+		"effect": "You obtain 2d4 Chaos Permacharges. Permacharges are like normal Charges but they don't go away after a long rest.",
+		"rolls": [
+		  {
+			"title": "Permacharges",
+			"roll": "2d4"
+		  }
+		]
+	  },
+	  {
+		"roll": 66,
+		"effect": "Your chaos spark replicates, creating a new chaos spark that you can give to another to put them on this path. If you already have a second chaos spark you obtain 2d4 Chaos Permacharges instead. Permacharges are like normal Charges but they don't go away after a long rest.",
+		"rolls": [
+		  {
+			"title": "Permacharges if you have a second chaos spark",
+			"roll": "2d4"
+		  }
+		]
+	  },
+	  {
+		"roll": 67,
+		"effect": "You are healed 8d8HP",
+		"rolls": [
+		  {
+			"title": "Heal",
+			"roll": "8d8"
+		  }
+		]
+	  },
+	  {
+		"roll": 68,
+		"effect": "Choose a target or a point in space you can see within 60ft of you. You start spewing force bullets from your mouth at high velocity. Roll 1d100, that's how many bullets you spew, then roll a die with sides equal to the result and that's how many bullets actually hit your target. Each bullet deals 1 force damage.",
+		"rolls": [
+		  {
+			"title": "Number of bullets",
+			"roll": "1d100"
+		  }
+		]
+	  },
+	  {
+		"roll": 69,
+		"effect": "**Coin of life and death.** You obtain a platinum coin that on the tails side (1) has a skull engraved in it and on the heads side (2) it has a tree. Any creature can flip the coin as a bonus action. If the result is tails the creature is automatically dropped to 1HP. If the result is heads the creature heals to full health and gets 20 temporary HP that last for 24 hours. The coin disappears when used or when 48h pass.",
+		"rolls": []
+	  },
+	  {
+		"roll": 70,
+		"effect": "You are affected by the spell Tongues for 24h. If you roll this while you're still affected the timer resets.",
+		"rolls": []
+	  },
+	  {
+		"roll": 71,
+		"effect": "You can attune to one extra magic item for 3 days. If you roll this while you're still affected by it from a previous roll, the effects stack and the timer resets.",
+		"rolls": []
+	  },
+	  {
+		"roll": 72,
+		"effect": "Your flesh becomes soft and malleable, and you can stretch it and mold it at will. You can stretch your arms as a free action to have 10ft reach in all melee attacks, stretch your legs to have double your height and cast Alter Self at will. This lasts for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 73,
+		"effect": "The white of your eyes turns into a deep void color, showing the stars as if there was a constellation inside your head. For 1 hour you know at all times all creatures that are within 60ft of you and their exact location. This may aid you in multiple different ways, like avoid being surprised, knowing where invisible creatures are, etc.",
+		"rolls": []
+	  },
+	  {
+		"roll": 74,
+		"effect": "You are considered to have the Keen Mind feat for a week, the memory only taking effect from when you obtained this. If you roll this while the effect is still active the timer resets.",
+		"rolls": []
+	  },
+	  {
+		"roll": 75,
+		"effect": "You have 60ft of blindsight for 12 hours if you didn't have more before.",
+		"rolls": []
+	  },
+	  {
+		"roll": 76,
+		"effect": "You may instantly teleport up to 2d20*5 ft",
+		"rolls": [
+		  {
+			"title": "Distance",
+			"roll": "2d20*5"
+		  }
+		]
+	  },
+	  {
+		"roll": 77,
+		"effect": "You are considered to be fed for a week, so you don't need to eat nor drink if you don't want to.",
+		"rolls": []
+	  },
+	  {
+		"roll": 78,
+		"effect": "You get a 60ft magical flying speed and Flyby for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 79,
+		"effect": "Roll 1d2 for every one of your stats, the corresponding stat raises by the result for 1 hour.",
+		"rolls": [
+		  {
+			"title": "Strength",
+			"roll": "1d2"
+		  },
+		  {
+			"title": "Dexterity",
+			"roll": "1d2"
+		  },
+		  {
+			"title": "Constitution",
+			"roll": "1d2"
+		  },
+		  {
+			"title": "Intelligence",
+			"roll": "1d2"
+		  },
+		  {
+			"title": "Wisdom",
+			"roll": "1d2"
+		  },
+		  {
+			"title": "Charisma",
+			"roll": "1d2"
+		  }
+		]
+	  },
+	  {
+		"roll": 80,
+		"effect": "You obtain 4d10 temporary HP that last until you lose them.",
+		"rolls": [
+		  {
+			"title": "Temporary HP",
+			"roll": "4d10"
+		  }
+		]
+	  },
+	  {
+		"roll": 81,
+		"effect": "A creature you can see must make a constitution saving throw. On a failure it takes 4d10 force damage and then becomes vulnerable to force damage for 1 minute, and on a success it takes half damage and does not become vulnerable.",
+		"rolls": [
+		  {
+			"title": "Damage",
+			"roll": "4d10"
+		  }
+		]
+	  },
+	  {
+		"roll": 82,
+		"effect": "For the next hour you can eat any non-magical object or money up to a value of 500gp in total. Note the objects and money you consumed if you consumed any, the next time you roll this effect instead of being able to eat you will puke everything you’ve eaten with this feature before and then puke it again, effectively doubling everything.",
+		"rolls": []
+	  },
+	  {
+		"roll": 83,
+		"effect": "1d300gp appear in front of you.",
+		"rolls": [
+		  {
+			"title": "Gold",
+			"roll": "1d300"
+		  }
+		]
+	  },
+	  {
+		"roll": 84,
+		"effect": "A rush passes through your whole body. This turn you can move an extra 1d12*5 feet and you don’t provoke attacks of opportunity.",
+		"rolls": [
+		  {
+			"title": "Extra movement",
+			"roll": "1d12*5"
+		  }
+		]
+	  },
+	  {
+		"roll": 85,
+		"effect": "A feast of delicious looking food and drinks appear in front of you. This feast can feed up to 12 people for the day, and whoever eats from it obtains 10 temporary HP that last 24 hours and gain double the health from their rolled hit dice on the next short rest they take within those 24 hours.",
+		"rolls": []
+	  },
+	  {
+		"roll": 86,
+		"effect": "You cast Eldritch Blast twice at your level, each blast looks like a shooting star.",
+		"rolls": []
+	  },
+	  {
+		"roll": 87,
+		"effect": "You get +2d4AC for 1 minute.",
+		"rolls": [
+		  {
+			"title": "Bonus AC",
+			"roll": "2d4"
+		  }
+		]
+	  },
+	  {
+		"roll": 88,
+		"effect": "If you have the spellcasting feature roll a dice with faces equal to your maximum spell slot level or 5, whichever is lower; you recover a spell slot of a level equal to the result or lower. If you don't have the spellcasting feature you can cast Fireball once before finishing a long rest.",
+		"rolls": []
+	  },
+	  {
+		"roll": 89,
+		"effect": "You shoot a blast of chaos energy. Make a ranged spell attack, on a hit the target takes 4d6+8 force damage.",
+		"rolls": [
+		  {
+			"title": "Force damage",
+			"roll": "4d6+8"
+		  }
+		]
+	  },
+	  {
+		"roll": 90,
+		"effect": "You become absurdly beautiful and your social skills evolve significantly. You obtain +4 charisma and your maximum charisma becomes 24 if it was lower. This lasts for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 91,
+		"effect": "You are affected by both the Speak with Animals and Speak with Plants spells.",
+		"rolls": []
+	  },
+	  {
+		"roll": 92,
+		"effect": "Roll two d6 and keep the highest one, you cast a spell of your choice of that level or lower without spending spell slots or using any material component.",
+		"rolls": []
+	  },
+	  {
+		"roll": 93,
+		"effect": "A creature of your choice you can see within 120ft of you must make a dexterity saving throw. On a failure, the void itself envelops it. That creature is then immune to all damage and hold in suspended animation without being able to do anything for 1 hour or until you use an action, bonus action or reaction to free it.",
+		"rolls": []
+	  },
+	  {
+		"roll": 94,
+		"effect": "You can cast Disguise Self, Alter Self, Invisibility, Major Image (at 3rd level) and Misty Step at will for 12 hours. If you make an attack or cast a spell that affects an enemy creature you can't use this effect again for 1 hour.",
+		"rolls": []
+	  },
+	  {
+		"roll": 95,
+		"effect": "For 1 hour you have two reactions per round and can activate your chaos spark as a reaction instead of a bonus action.",
+		"rolls": []
+	  },
+	  {
+		"roll": 96,
+		"effect": "You may transform into an exact copy of any non-PC creature up to CR18 you can see when you roll this for 1 hour. The transformation lasts for the duration, or until you drop to 0 hit points or die. Your game statistics, including mental ability scores, are replaced by the statistics of the chosen creature, but you retain your alignment and personality. When you revert to your normal form, you return to the number of hit points you had before transforming. If you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. As long as the excess damage doesn’t reduce your normal form to 0 hit points, you aren’t knocked unconscious.",
+		"rolls": []
+	  },
+	  {
+		"roll": 97,
+		"effect": "For 1 hour you can forgo any amount of feet of your movement to teleport that same distance to a point you can see. This can be used any amount of times per round.",
+		"rolls": []
+	  },
+	  {
+		"roll": 98,
+		"effect": "You obtain 1 minute for your Chaos Avatar Transformation feature.",
+		"rolls": []
+	  },
+	  {
+		"roll": 99,
+		"effect": "You obtain 5 minutes for your Chaos Avatar Transformation feature.",
+		"rolls": []
+	  },
+	  {
+		"roll": 100,
+		"effect": "You obtain 10 minutes for your Chaos Avatar Transformation feature.",
+		"rolls": []
+	  }
+	]
+  }
+  
