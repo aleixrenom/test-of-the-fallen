@@ -1,5 +1,5 @@
 const cf = require('./commonFunctions.js');
-const ws = require('../commands/ws.js');
+const ws = require('../commands/old/ws.js');
 const schedule = require('node-schedule');
 const data = cf.readDataFile('data');
 let today = new Date();
