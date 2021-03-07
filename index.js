@@ -2,6 +2,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const cf = require('./components/commonFunctions.js');
+const scheduling = require('./components/scheduling.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -20,6 +21,7 @@ for (const folder of commandFolders) {
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
+	scheduling.turnOnSchedules();
 	console.log('Ready!');
 });
 
