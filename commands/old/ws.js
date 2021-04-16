@@ -43,8 +43,9 @@ module.exports = {
 		.setThumbnail(rolledWeather.image)
 		.setColor(rolledWeather.color);
 
-		// post it into the weather channel
-		cf.client.channels.cache.get(data.weatherSchedule.forecastChannel).send("**Next weather:**");
+		// post it in the forecast channel
+		// (!) changed to be the primary weather until I figure out the database stuff
+		// cf.client.channels.cache.get(data.weatherSchedule.forecastChannel).send("**Next weather:**");
 		cf.client.channels.cache.get(data.weatherSchedule.forecastChannel).send(tomorrowWeatherEmbed);
 
 		// save the new values to the data file
