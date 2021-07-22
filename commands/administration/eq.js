@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const cf = require('../../components/commonFunctions.js');
-const postgres = require('../../components/postgres.js');
 
 module.exports = {
 	name: 'eq',
@@ -20,7 +19,6 @@ module.exports = {
 			return str.trim();
 		}
 
-		message.channel.send(cf.rnd(1,20));
-		// message.channel.send(postgres.eq(queryString()));
+		message.channel.send(cf.executeQuery(queryString()));
 	},
 };
