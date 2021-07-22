@@ -2,6 +2,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const cf = require('./components/commonFunctions.js');
+const postgres = require('./components/postgres.js');
 const scheduling = require('./components/scheduling.js');
 
 const client = new Discord.Client();
@@ -81,7 +82,7 @@ client.on('message', message => {
 		command.execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute that command!');
+		message.reply('There was an error trying to execute that command!');
 	}
 });
 
