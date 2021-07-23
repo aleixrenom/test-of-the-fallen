@@ -6,6 +6,6 @@ module.exports = {
 	cooldown: 1,
 	execute(message) {
 		message.channel.send('Pong.');
-		console.log(qh.getWeatherSchedule());
+		console.log(await qh.getWeatherSchedule());
 	},
 };
