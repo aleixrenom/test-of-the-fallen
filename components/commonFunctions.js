@@ -1,20 +1,6 @@
 const fs = require('fs');
 const d20 = require('d20');
 
-// const { Pool, Client } = require("pg")
-// const connectionString = process.env.DATABASE_URL;
-// const dbClient = new Client ({
-// 	connectionString:connectionString
-// })
-
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
-
 let client;
 let clockInterval;
 
@@ -171,48 +157,6 @@ function roll(rollString) {
 	
 }
 
-/**
- * Take an posgreSQL query, execute it and return the result.
- * 
- * @param {string} queryString A correctly formatted postgeSQL query.
- * @return {string} The resultof the query or an error message.
- */
-async function executeQuery(req, res, queryString) {
-
-	try {
-		const client = await pool.connect();
-		const result = await client.query('create table test_table (id integer, name text);');
-		const results = { 'results': (result) ? result.rows : null};
-		const output = results;
-		// res.render('pages/db', results );
-		client.release();
-		return results;
-	} catch (err) {
-		console.error(err);
-		return "Error " + err;
-		// res.send("Error " + err);
-	}
-
-	// try {
-	// 	let data = "";
-	// 	dbClient.connect()
-	// 	dbClient.query(queryString, (err,res)=>{
-	// 		console.log(err,res);
-	// 		data = "Result:\n" + res + "\nError:" + err;
-	// 	})
-	// 	dbClient.end()
-
-	// 	if (data.length <= 1900) {
-	// 		return "```json\n" + data +  "\n```"
-	// 	} else {
-	// 		return "```json\n" + data.slice(0,1900) +  "\n```\n[Result too long. See the rest in the console's logs.]"
-	// 	}
-	// } catch(err) {
-	// 	console.error(err);
-	// 	return "There was an error trying to execute the query: " + err;
-	// }
-}
-
 module.exports = {
 	rnd,
 	toFh,
@@ -221,6 +165,5 @@ module.exports = {
 	writeDataFile,
 	client,
 	roll,
-	clockInterval,
-	executeQuery
+	clockInterval
 }
