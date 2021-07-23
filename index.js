@@ -100,6 +100,7 @@ dbclient.connect()
 .then(() => dbclient.query(`
 INSERT INTO WeatherSchedule
 VALUES (
+	1,
 	'on',
 	'none',
 	'x°C / X°F',
