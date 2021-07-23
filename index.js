@@ -97,6 +97,7 @@ dbclient.connect()
 .then(() => console.log("Connection to database successful."))
 .then(() => dbclient.query("CREATE TABLE IF NOT EXISTS WeatherSchedule (id SERIAL, status text, type text, temperature text, lightning text, winds text, image text, color integer, forecastChannel text, weatherChannel text)"))
 .then(() => dbclient.query("SELECT * FROM WeatherSchedule"))
+.then(results => console.log(results))
 .catch(err => console.error("Error connecting to the database: " + err))
 .finally(() => dbclient.end())
 
