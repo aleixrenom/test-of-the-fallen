@@ -12,9 +12,10 @@ async function getWeatherSchedule() {
 	const results = await dbclient.query(`
 	SELECT *
 	FROM WeatherSchedule
+	WHERE id = 1
 	`)
 	// transform into object
 	await dbclient.end()
-	// return the object
+	return results
 
 }
