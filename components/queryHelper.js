@@ -16,7 +16,7 @@ async function getWeatherSchedule() {
 	`)
 	// transform into object
 	await dbclient.end()
-	return results
+	return results.rows[0]
 
 }
 
