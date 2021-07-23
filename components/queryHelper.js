@@ -19,3 +19,7 @@ async function getWeatherSchedule() {
 	return results
 
 }
+
+module.exports = {
+	getWeatherSchedule
+}
