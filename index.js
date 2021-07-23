@@ -2,7 +2,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const cf = require('./components/commonFunctions.js');
-const postgres = require('./components/postgres.js');
 const scheduling = require('./components/scheduling.js');
 
 const client = new Discord.Client();
