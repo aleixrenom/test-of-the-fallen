@@ -86,4 +86,17 @@ client.on('message', message => {
 	}
 });
 
+const { Client } = require('pg');
+const dbclient = new Client({
+	connectionString: process.env.DATABASE_URL,
+	ssl: {
+	  rejectUnauthorized: false
+	}
+});
+
+dbclient.connect()
+.then(() => console.log("Connection to database successful."))
+.catch(err => console.error("Error connecting to the database: " + err))
+.finally(() => dbclient.end())
+
 client.login(process.env.TOKEN);
