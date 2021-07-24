@@ -8,7 +8,7 @@ module.exports = {
 	async execute(message) {
 		// let data = await qh.getWeatherSchedule();
 		console.log(cf.client.channels.cache.get(message.channel.id));
-		message.channel.send(cf.client.channels.cache.get(message.channel.id));
-		message.channel.send('Pong.');
+		message.channel.send(cf.client.channels.cache.get(message.channel.id)).then().catch(err => console.error(err));
+		message.channel.send('Pong.').then().catch(err => console.error(err));
 	},
 };
