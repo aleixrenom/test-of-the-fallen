@@ -1,3 +1,4 @@
+/*
 const cf = require('../../components/commonFunctions.js');
 const weather = require('../../components/weather.js');
 const Discord = require('discord.js');
@@ -115,3 +116,4 @@ module.exports = {
 		}
 	}
 }
+*/
