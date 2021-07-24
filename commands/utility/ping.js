@@ -5,9 +5,8 @@ module.exports = {
 	description: 'Ping!',
 	cooldown: 1,
 	async execute(message) {
-		message.channel.send('Pong.');
-		// qh.getWeatherSchedule()
-		// .then(results => console.log(results))
-		// .catch(err => console.error(err))
+		let data = await qh.getWeatherSchedule();
+		message.channel.send(data);
+		// message.channel.send('Pong.');
 	},
 };
