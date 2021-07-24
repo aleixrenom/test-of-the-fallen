@@ -16,24 +16,24 @@ const dbclient = new Pool({
 
 async function getWeatherSchedule() {
 	try {
-		await dbclient.connect()
+		// await dbclient.connect()
 		console.log("Connected successfuly.")
 		const results = await dbclient.query(`
 		SELECT *
 		FROM WeatherSchedule
 		WHERE id = 1
 		`)
-		await dbclient.end()
+		// await dbclient.end()
 		return results.rows[0]
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
-		await dbclient.end()
+		// await dbclient.end()
 	} 
 }
 
 async function updateWeatherSchedule(weatherObject) {
 	try {
-		await dbclient.connect()
+		// await dbclient.connect()
 		console.log("Connected successfuly.")
 		const results = await dbclient.query(`
 		UPDATE WeatherSchedule
@@ -61,10 +61,10 @@ async function updateWeatherSchedule(weatherObject) {
 			weatherObject.weatherChannel
 		])
 		console.log(results)
-		await dbclient.end()
+		// await dbclient.end()
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
-		await dbclient.end()
+		// await dbclient.end()
 	} 
 }
 
