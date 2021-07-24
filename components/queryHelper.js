@@ -7,7 +7,12 @@
 // });
 
 const { Pool } = require('pg');
-const dbclient = new Pool();
+const dbclient = new Pool({
+		connectionString: process.env.DATABASE_URL,
+		ssl: {
+		  rejectUnauthorized: false
+		}
+	});
 
 async function getWeatherSchedule() {
 	try {

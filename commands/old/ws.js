@@ -129,7 +129,7 @@ module.exports = {
 					await qh.updateWeatherSchedule(data);
 				} catch (err) {
 					message.channel.send("There was an error trying to set the weather channel: " + err);
-					console.error(err);
+					console.error("There was an error trying to set the weather channel: " + err);
 				}
 				break;
 			case "changeForecastChannel":
@@ -146,7 +146,7 @@ module.exports = {
 					await qh.updateWeatherSchedule(data);
 				} catch (err) {
 					message.channel.send("There was an error trying to set the forecast channel: " + err);
-					console.error(err);
+					console.error("There was an error trying to set the forecast channel: " + err);
 				}
 				break;
 			default:
