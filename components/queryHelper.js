@@ -21,7 +21,7 @@ async function getWeatherSchedule() {
 		SELECT *
 		FROM WeatherSchedule
 		`)
-		return results.rows[0]
+		return results
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
 	} 
