@@ -59,7 +59,11 @@ module.exports = {
 					message.channel.send("This command is only avaliable to Admins.");
 					return;
 				} else {
-					if (cf.readDataFile('data').weatherSchedule.status === "off") {
+					if (() => {
+							const data = await qh.getWeatherSchedule()
+							return data.status === "off"
+						}
+					) {
 						message.channel.send("The weather scheduling is turned off.");
 						return;
 					}
@@ -68,7 +72,7 @@ module.exports = {
 				break;
 			case "on":
 				try {
-					let data = cf.readDataFile('data');
+					let data = await qh.getWeatherSchedule();
 
 					if (data.status === "on") {
 						message.channel.send("The scheduling is already on.");
@@ -76,7 +80,7 @@ module.exports = {
 					}
 
 					data.status = "on";
-					cf.writeDataFile(data,'data');
+					await qh.updateWeatherSchedule(data);
 
 					message.channel.send("Scheduling turned on.")
 				} catch(err) {
@@ -86,7 +90,7 @@ module.exports = {
 				break;
 			case "off":
 				try {
-					let data = cf.readDataFile('data');
+					let data = await qh.getWeatherSchedule();
 
 					if (data.status === "off") {
 						message.channel.send("The scheduling is already off.");
@@ -94,7 +98,7 @@ module.exports = {
 					}
 
 					data.status = "off";
-					cf.writeDataFile(data,'data');
+					await qh.updateWeatherSchedule(data);
 
 					message.channel.send("Scheduling turned off.")
 				} catch(err) {
@@ -104,14 +108,49 @@ module.exports = {
 				break;
 			case "status":
 				try {
-					message.channel.send("The weather scheduling is " + cf.readDataFile('data').weatherSchedule.status + ".");
+					let data = await qh.getWeatherSchedule();
+					message.channel.send("The weather scheduling is " + data.status + ".");
 				} catch(err) {
 					message.channel.send("There was an error checking the scheduling status.");
 					console.log("There was an error checking the scheduling status: " + err);
 				}
 				break;
+			case "changeWeatherChannel":
+				if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
+					message.channel.send("This command is only avaliable to Admins.");
+					return;
+				}
+
+				try {
+					let data = await qh.getWeatherSchedule();
+					data.weatherChannel = message.channel.id;
+					console.log(message.channel.id); // temp
+					message.channel.send("Weather channel changed to this one.");
+					await qh.updateWeatherSchedule(data);
+				} catch (err) {
+					message.channel.send("There was an error trying to set the weather channel: " + err);
+					console.error(err);
+				}
+				break;
+			case "changeForecastChannel":
+				if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
+					message.channel.send("This command is only avaliable to Admins.");
+					return;
+				}
+
+				try {
+					let data = await qh.getWeatherSchedule();
+					data.forecastChannel = message.channel.id;
+					console.log(message.channel.id); // temp
+					message.channel.send("Forecast channel changed to this one.");
+					await qh.updateWeatherSchedule(data);
+				} catch (err) {
+					message.channel.send("There was an error trying to set the forecast channel: " + err);
+					console.error(err);
+				}
+				break;
 			default:
-				message.channel.send("Avaliable arguments: forceRoll (admin), on, off, status.");
+				message.channel.send("Avaliable arguments: on, off, status.\nAdmin only arguments: forceRoll, changeWeatherChannel, changeForecastChannel.");
 				break;
 		}
 	}
