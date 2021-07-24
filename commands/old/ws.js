@@ -127,7 +127,6 @@ module.exports = {
 				try {
 					let data = await qh.getWeatherSchedule();
 					data.weatherChannel = message.channel.id;
-					console.log(message.channel.id); // temp
 					message.channel.send("Weather channel changed to this one.");
 					await qh.updateWeatherSchedule(data);
 				} catch (err) {
@@ -144,7 +143,6 @@ module.exports = {
 				try {
 					let data = await qh.getWeatherSchedule();
 					data.forecastChannel = message.channel.id;
-					console.log(message.channel.id); // temp
 					message.channel.send("Forecast channel changed to this one.");
 					await qh.updateWeatherSchedule(data);
 				} catch (err) {
