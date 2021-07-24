@@ -20,7 +20,6 @@ async function getWeatherSchedule() {
 		const results = await dbclient.query(`
 		SELECT *
 		FROM WeatherSchedule
-		WHERE id = 1
 		`)
 		return results.rows[0]
 	} catch(err) {
