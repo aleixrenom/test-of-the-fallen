@@ -56,7 +56,6 @@ async function updateWeatherSchedule(weatherObject) {
 			weatherObject.forecastChannel,
 			weatherObject.weatherChannel
 		])
-		console.log(results)
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
 	} 
