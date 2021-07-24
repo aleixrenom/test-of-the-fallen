@@ -22,9 +22,10 @@ module.exports = {
 		.setColor(data.color);
 
 		// post it in the weather channel
-		cf.client.channels.cache.get(data.weatherChannel).send(todayWeatherEmbed)
-			.then()
-			.catch(err => console.error(err));
+		// cf.client.channels.cache.get(data.weatherChannel).send(todayWeatherEmbed)
+		// 	.then()
+		// 	.catch(err => console.error(err));
+		console.log(cf.client.channels.cache.get(data.weatherChannel));
 
 		// roll a new weather
 		const rolledWeather = weather.getCurrentSeason().roll(); // this is an object with weather values
