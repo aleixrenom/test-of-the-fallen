@@ -7,19 +7,60 @@ const dbclient = new Client({
 });
 
 async function getWeatherSchedule() {
-	await dbclient.connect()
-	console.log("Connected successfuly.")
-	const results = await dbclient.query(`
-	SELECT *
-	FROM WeatherSchedule
-	WHERE id = 1
-	`)
-	// transform into object
-	await dbclient.end()
-	return results.rows[0]
+	try {
+		await dbclient.connect()
+		console.log("Connected successfuly.")
+		const results = await dbclient.query(`
+		SELECT *
+		FROM WeatherSchedule
+		WHERE id = 1
+		`)
+		await dbclient.end()
+		return results.rows[0]
+	} catch(err) {
+		console.error("Error in getWeatherSchedule: " + err)
+		await dbclient.end()
+	}
+}
 
+async function updateWeatherSchedule(weatherObject) {
+	try {
+		await dbclient.connect()
+		console.log("Connected successfuly.")
+		const results = await dbclient.query(`
+		UPDATE WeatherSchedule
+		SET 
+			status = $1,
+			type = $2,
+			temperature = $3,
+			lightning = $4,
+			winds = $5,
+			image = $6,
+			color = $7,
+			forecastChannel = $8,
+			weatherChannel = $9
+		WHERE id = 1
+		`, 
+		[
+			weatherObject.status, 
+			weatherObject.type, 
+			weatherObject.temperature,
+			weatherObject.lightning,
+			weatherObject.winds,
+			weatherObject.image,
+			weatherObject.color,
+			weatherObject.forecastChannel,
+			weatherObject.weatherChannel
+		])
+		console.log(results)
+		await dbclient.end()
+	} catch(err) {
+		console.error("Error in getWeatherSchedule: " + err)
+		await dbclient.end()
+	}
 }
 
 module.exports = {
-	getWeatherSchedule
+	getWeatherSchedule,
+	updateWeatherSchedule
 }

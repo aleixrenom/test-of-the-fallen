@@ -80,8 +80,8 @@ client.on('message', message => {
 	try {
 		command.execute(message, args);
 	} catch (error) {
-		console.error(error);
-		message.reply('There was an error trying to execute that command!');
+		console.error("Error executing the command: " + error);
+		message.channel.send('There was an error trying to execute that command!');
 	}
 });
 

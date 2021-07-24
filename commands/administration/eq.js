@@ -5,7 +5,7 @@ module.exports = {
 	name: 'eq',
 	description: 'Executes a query on the database.',
 	cooldown: 1,
-	execute(message, args) {
+	async execute(message, args) {
 		if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
 			message.channel.send("This command is only avaliable to Admins.");
 			return;

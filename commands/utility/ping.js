@@ -4,10 +4,10 @@ module.exports = {
 	name: 'ping',
 	description: 'Ping!',
 	cooldown: 1,
-	execute(message) {
+	async execute(message) {
 		message.channel.send('Pong.');
-		qh.getWeatherSchedule()
-		.then(results => console.log(results))
-		.catch(err => console.error(err))
+		// qh.getWeatherSchedule()
+		// .then(results => console.log(results))
+		// .catch(err => console.error(err))
 	},
 };

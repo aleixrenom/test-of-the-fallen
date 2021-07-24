@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'ca',
 	description: 'Command to automate the Path of the Chaos Avatar.',
-	execute(message, args) {
+	async execute(message, args) {
 	switch (args[0]) {
 		case "roll":
 			let maxDieFaces = 1;
