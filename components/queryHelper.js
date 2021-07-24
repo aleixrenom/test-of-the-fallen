@@ -20,6 +20,8 @@ async function getWeatherSchedule() {
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
 		await dbclient.end()
+	} finally {
+		await dbclient.end()
 	}
 }
 
@@ -56,6 +58,8 @@ async function updateWeatherSchedule(weatherObject) {
 		await dbclient.end()
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
+		await dbclient.end()
+	} finally {
 		await dbclient.end()
 	}
 }
