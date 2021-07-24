@@ -59,15 +59,14 @@ module.exports = {
 					message.channel.send("This command is only avaliable to Admins.");
 					return;
 				} else {
-					if (async () => {
-							const data = await qh.getWeatherSchedule()
-							return data.status === "off"
-						}
-					) {
+					let data = await qh.getWeatherSchedule();
+
+					if (data.status === "off") {
 						message.channel.send("The weather scheduling is turned off.");
 						return;
+					} else {
+						await this.rollWeather();
 					}
-					await this.rollWeather();
 				}
 				break;
 			case "on":
