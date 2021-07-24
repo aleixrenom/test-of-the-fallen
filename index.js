@@ -84,7 +84,7 @@ client.on('message', message => {
 		message.channel.send('There was an error trying to execute that command!');
 	}
 });
-/*
+
 // #region Database create tables
 const { Client } = require('pg');
 const dbclient = new Client({
@@ -93,10 +93,21 @@ const dbclient = new Client({
 	  rejectUnauthorized: false
 	}
 });
-
+/*
 dbclient.connect()
 .then(() => console.log("Connection to database successful."))
-.then(() => dbclient.query("CREATE TABLE IF NOT EXISTS WeatherSchedule (id SERIAL, status text, type text, temperature text, lightning text, winds text, image text, color integer, forecastChannel text, weatherChannel text)"))
+.then(() => dbclient.query(`
+CREATE TABLE IF NOT EXISTS WeatherSchedule (
+	id SERIAL, 
+	status text, 
+	type text, 
+	temperature text, 
+	lightning text, 
+	winds text, 
+	image text, 
+	color integer, 
+	forecastChannel text, 
+	weatherChannel text)`))
 // .then(() => dbclient.query(`
 // INSERT INTO WeatherSchedule
 // VALUES (
