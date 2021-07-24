@@ -84,7 +84,7 @@ client.on('message', message => {
 		message.channel.send('There was an error trying to execute that command!');
 	}
 });
-
+/*
 // #region Database create tables
 const { Client } = require('pg');
 const dbclient = new Client({
@@ -118,5 +118,5 @@ dbclient.connect()
 .finally(() => dbclient.end())
 
 // #endregion
-
+*/
 client.login(process.env.TOKEN);

@@ -1,10 +1,13 @@
-const { Client } = require('pg');
-const dbclient = new Client({
-	connectionString: process.env.DATABASE_URL,
-	ssl: {
-	  rejectUnauthorized: false
-	}
-});
+// const { Client } = require('pg');
+// const dbclient = new Client({
+// 	connectionString: process.env.DATABASE_URL,
+// 	ssl: {
+// 	  rejectUnauthorized: false
+// 	}
+// });
+
+const { Pool } = require('pg');
+const dbclient = new Pool();
 
 async function getWeatherSchedule() {
 	try {
@@ -20,9 +23,7 @@ async function getWeatherSchedule() {
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
 		await dbclient.end()
-	} finally {
-		await dbclient.end()
-	}
+	} 
 }
 
 async function updateWeatherSchedule(weatherObject) {
@@ -59,9 +60,7 @@ async function updateWeatherSchedule(weatherObject) {
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
 		await dbclient.end()
-	} finally {
-		await dbclient.end()
-	}
+	} 
 }
 
 module.exports = {
