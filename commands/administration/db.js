@@ -13,11 +13,11 @@ module.exports = {
 		}
 
 		switch (args[0]) {
-			case "printTable":
+			case "readTable":
 				if (args.length > 1) {
 					try {
 						const data = await qh.readTable(args[1]);
-						message.channel.send("```json\n" + data + "\n```");
+						message.channel.send("```json\n" + JSON.stringify(data, null, 2) + "\n```");
 					} catch(err) {
 						console.error("Error printing table: " + err);
 						message.channel.send("Error printing table: " + err);

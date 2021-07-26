@@ -72,8 +72,8 @@ async function readTable(table) {
 	try {
 		const text = "SELECT * FROM " + table;
 		const results = await dbclient.query(text);
-		console.log(results);
-		return results;
+		console.log(results.rows);
+		return results.rows;
 	} catch(err) {
 		console.error("Error reading table: " + err);
 		return {error: "Error reading table: " + err}
