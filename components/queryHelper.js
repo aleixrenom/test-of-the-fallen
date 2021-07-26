@@ -70,9 +70,8 @@ async function updateWeatherSchedule(weatherObject) {
  */
 async function readTable(table) {
 	try {
-		const results = await dbclient.query(`
-			SELECT * FROM $1
-		`, [table]);
+		const text = "SELECT * FROM " + table;
+		const results = await dbclient.query(text);
 		console.log(results);
 		return results;
 	} catch(err) {
