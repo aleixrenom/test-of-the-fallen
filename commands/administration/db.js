@@ -17,6 +17,7 @@ module.exports = {
 				if (args.length > 1) {
 					try {
 						const data = await qh.readTable(args[1]);
+						message.channel.send(args[1]);
 						message.channel.send("```json\n" + data + "\n```");
 					} catch(err) {
 						console.error("Error printing table: " + err);
