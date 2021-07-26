@@ -20,8 +20,8 @@ module.exports = {
 			winds: "7mph (Gentle breeze)",
 			image: "https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fclear_skies.png?v=1581434913716",
 			color: 16044095,
-			forecastChannel: 868417961013153872,
-			weatherChannel: 868417936853983242
+			forecastchannel: 868417961013153872,
+			weatherchannel: 868417936853983242
 		});
 	},
 };

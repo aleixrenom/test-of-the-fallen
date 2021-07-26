@@ -53,8 +53,8 @@ async function updateWeatherSchedule(weatherObject) {
 			weatherObject.winds,
 			weatherObject.image,
 			weatherObject.color,
-			weatherObject.forecastChannel,
-			weatherObject.weatherChannel
+			weatherObject.forecastchannel,
+			weatherObject.weatherchannel
 		])
 		console.log("Weather schedule updated successfuly.")
 	} catch(err) {
