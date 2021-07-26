@@ -25,7 +25,7 @@ module.exports = {
 		// cf.client.channels.cache.get(data.weatherChannel).send(todayWeatherEmbed)
 		// 	.then()
 		// 	.catch(err => console.error(err));
-		console.log(typeof data.weatherChannel);
+		console.log(typeof data);
 
 		// roll a new weather
 		const rolledWeather = weather.getCurrentSeason().roll(); // this is an object with weather values
