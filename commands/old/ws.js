@@ -25,7 +25,7 @@ module.exports = {
 		// cf.client.channels.cache.get(data.weatherChannel).send(todayWeatherEmbed)
 		// 	.then()
 		// 	.catch(err => console.error(err));
-		console.log(typeof data);
+		console.log(data);
 
 		// roll a new weather
 		const rolledWeather = weather.getCurrentSeason().roll(); // this is an object with weather values
@@ -50,9 +50,9 @@ module.exports = {
 		// post it in the forecast channel
 		// (!) changed to be the primary weather until I figure out the database stuff
 		// cf.client.channels.cache.get(data.forecastChannel).send("**Next weather:**");
-		cf.client.channels.cache.get(data.forecastChannel).send(tomorrowWeatherEmbed)
-			.then()
-			.catch(err => console.error(err));
+		// cf.client.channels.cache.get(data.forecastChannel).send(tomorrowWeatherEmbed)
+		// 	.then()
+		// 	.catch(err => console.error(err));
 
 		// save the new values to the data file
 		await qh.updateWeatherSchedule(data);
