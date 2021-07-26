@@ -48,7 +48,7 @@ module.exports = {
 
 		// post it in the forecast channel
 		// (!) changed to be the primary weather until I figure out the database stuff
-		// cf.client.channels.cache.get(data.forecastChannel).send("**Next weather:**");
+		cf.client.channels.cache.get(data.forecastChannel).send("**Next weather:**");
 		cf.client.channels.cache.get(data.forecastchannel).send(tomorrowWeatherEmbed)
 			.then()
 			.catch(err => console.error(err));
