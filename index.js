@@ -85,49 +85,4 @@ client.on('message', message => {
 	}
 });
 
-// #region Database create tables
-const { Client } = require('pg');
-const dbclient = new Client({
-	connectionString: process.env.DATABASE_URL,
-	ssl: {
-	  rejectUnauthorized: false
-	}
-});
-/*
-dbclient.connect()
-.then(() => console.log("Connection to database successful."))
-.then(() => dbclient.query(`
-CREATE TABLE IF NOT EXISTS WeatherSchedule (
-	id SERIAL, 
-	status text, 
-	type text, 
-	temperature text, 
-	lightning text, 
-	winds text, 
-	image text, 
-	color integer, 
-	forecastChannel text, 
-	weatherChannel text)`))
-// .then(() => dbclient.query(`
-// INSERT INTO WeatherSchedule
-// VALUES (
-// 	1,
-// 	'on',
-// 	'none',
-// 	'x°C / X°F',
-// 	'none',
-// 	'Xmph ()',
-// 	'https://cdn.glitch.com/aabc7c04-7768-48f9-b0a0-f1621bd9d381%2Fclear_skies.png?v=1581434913716',
-// 	16044095,
-// 	'606037277105455125',
-// 	'817761381234901042'
-// )
-// `))
-// .then(() => dbclient.query("SELECT * FROM WeatherSchedule"))
-// .then(results => console.table(results.rows))
-.catch(err => console.error("Error connecting to the database: " + err))
-.finally(() => dbclient.end())
-
-// #endregion
-*/
 client.login(process.env.TOKEN);
