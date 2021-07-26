@@ -62,7 +62,27 @@ async function updateWeatherSchedule(weatherObject) {
 	} 
 }
 
+/**
+ * Returns an object with the contents of the specified table
+ * 
+ * @param {string} table Name of the table you want to read
+ * @returns {object} Contents of the table
+ */
+async function readTable(table) {
+	try {
+		const results = await dbclient.query(`
+			SELECT * FROM $1
+		`, [table]);
+		console.log(results);
+		return results;
+	} catch(err) {
+		console.error("Error reading table: " + err);
+		return {error: "Error reading table: " + err}
+	}
+}
+
 module.exports = {
 	getWeatherSchedule,
-	updateWeatherSchedule
+	updateWeatherSchedule,
+	readTable
 }
