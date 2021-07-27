@@ -6,9 +6,9 @@ module.exports = {
 	description: 'Ping!',
 	cooldown: 1,
 	async execute(message) {
-		const weathermanId = await qh.getId("role", "weatherman");
+		const weathermanId = await qh.getId("role", "admin");
 		if (!message.member.roles.cache.has(weathermanId)) {
-			message.channel.send("You do ot have the weatherman role.");
+			message.channel.send("You do not have the admin role.");
 			return;
 		}
 
