@@ -1,8 +1,11 @@
 const fs = require('fs');
 const d20 = require('d20');
+const qh = require('./queryHelper.js');
 
 let client;
 let clockInterval;
+const roleIdAdmin = await qh.readTable("ids").find(e => e.type == "role" && e.name == "admin");
+const roleIdWeatherman = await qh.readTable("ids").find(e => e.type == "role" && e.name == "weatherman");
 
 function rnd(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -165,5 +168,7 @@ module.exports = {
 	writeDataFile,
 	client,
 	roll,
-	clockInterval
+	clockInterval,
+	roleIdAdmin,
+	roleIdWeatherman
 }

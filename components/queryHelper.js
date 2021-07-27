@@ -1,11 +1,3 @@
-// const { Client } = require('pg');
-// const dbclient = new Client({
-// 	connectionString: process.env.DATABASE_URL,
-// 	ssl: {
-// 	  rejectUnauthorized: false
-// 	}
-// });
-
 const { Pool } = require('pg');
 const dbclient = new Pool({
 		connectionString: process.env.DATABASE_URL,
