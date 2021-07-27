@@ -4,8 +4,6 @@ const qh = require('./queryHelper.js');
 
 let client;
 let clockInterval;
-let roleIdAdmin;
-let roleIdWeatherman;
 
 function rnd(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;

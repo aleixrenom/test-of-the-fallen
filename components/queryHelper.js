@@ -64,16 +64,35 @@ async function readTable(table) {
 	try {
 		const text = "SELECT * FROM " + table;
 		const results = await dbclient.query(text);
-		console.log(results.rows);
 		return results.rows;
 	} catch(err) {
 		console.error("Error reading table: " + err);
 		return {error: "Error reading table: " + err}
 	}
 }
+/**
+ * Ask for a specific id to the ids table.
+ * 
+ * @param {String} type The type of id you're looking for (role, channel, guild...)
+ * @param {String} name The name of the id (admin, weatherman, ...)
+ * @returns {BigInt} Id asked
+ */
+async function getId(type, name) {
+	try {
+		const results = await dbclient.query(`
+			SELECT id
+			FROM ids
+			WHERE type = $1 AND name = $2;
+		`, [type, name]);
+		console.log(results);
+	} catch(err) {
+		console.error("Error in getId: " + err);
+	}
+}
 
 module.exports = {
 	getWeatherSchedule,
 	updateWeatherSchedule,
-	readTable
+	readTable,
+	getId
 }
