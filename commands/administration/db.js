@@ -7,7 +7,7 @@ module.exports = {
 	description: 'Interfaces with the database.',
 	cooldown: 1,
 	async execute(message, args) {
-		if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
+		if (!message.member._roles.includes(String(await qh.getId("role", "admin")))) {
 			message.channel.send("This command is only avaliable to Admins.");
 			return;
 		}

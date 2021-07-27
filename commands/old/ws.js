@@ -58,7 +58,7 @@ module.exports = {
 	async execute(message, args) {
 		switch (args[0]) {
 			case "forceRoll":
-				if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
+				if (!message.member._roles.includes(String(await qh.getId("role", "admin")))) {
 					message.channel.send("This command is only avaliable to Admins.");
 					return;
 				} else {
@@ -73,6 +73,12 @@ module.exports = {
 				}
 				break;
 			case "on":
+				if (!message.member._roles.includes(String(await qh.getId("role", "admin"))) && 
+					!message.member._roles.includes(String(await qh.getId("role", "weatherman")))) {
+					message.channel.send("This command is only avaliable to Admins and Weatherman.");
+					return;
+				}
+
 				try {
 					let data = await qh.getWeatherSchedule();
 
@@ -91,6 +97,12 @@ module.exports = {
 				}
 				break;
 			case "off":
+				if (!message.member._roles.includes(String(await qh.getId("role", "admin"))) && 
+					!message.member._roles.includes(String(await qh.getId("role", "weatherman")))) {
+					message.channel.send("This command is only avaliable to Admins and Weatherman.");
+					return;
+				}
+
 				try {
 					let data = await qh.getWeatherSchedule();
 
@@ -109,6 +121,12 @@ module.exports = {
 				}
 				break;
 			case "status":
+				if (!message.member._roles.includes(String(await qh.getId("role", "admin"))) && 
+					!message.member._roles.includes(String(await qh.getId("role", "weatherman")))) {
+					message.channel.send("This command is only avaliable to Admins and Weatherman.");
+					return;
+				}
+
 				try {
 					let data = await qh.getWeatherSchedule();
 					message.channel.send("The weather scheduling is " + data.status + ".");
@@ -118,7 +136,7 @@ module.exports = {
 				}
 				break;
 			case "changeWeatherChannel":
-				if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
+				if (!message.member._roles.includes(String(await qh.getId("role", "admin")))) {
 					message.channel.send("This command is only avaliable to Admins.");
 					return;
 				}
@@ -134,7 +152,7 @@ module.exports = {
 				}
 				break;
 			case "changeForecastChannel":
-				if (!message.member.roles.cache.has(cf.readDataFile('data').roles.admin)) {
+				if (!message.member._roles.includes(String(await qh.getId("role", "admin")))) {
 					message.channel.send("This command is only avaliable to Admins.");
 					return;
 				}
