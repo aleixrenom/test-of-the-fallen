@@ -166,7 +166,5 @@ module.exports = {
 	writeDataFile,
 	client,
 	roll,
-	clockInterval,
-	roleIdAdmin,
-	roleIdWeatherman
+	clockInterval
 }
