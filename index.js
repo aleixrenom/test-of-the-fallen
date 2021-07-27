@@ -22,8 +22,14 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
 	scheduling.turnOnSchedules();
+	assignIds();
 	console.log('Ready!');
 });
+
+async function assignIds() {
+	cf.roleIdAdmin = await qh.readTable("ids").find(e => e.type == "role" && e.name == "admin");
+	cf.roleIdWeatherman = await qh.readTable("ids").find(e => e.type == "role" && e.name == "weatherman");
+}
 
 client.on('message', message => {
 	if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
