@@ -7,9 +7,9 @@ module.exports = {
 	cooldown: 1,
 	async execute(message) {
 		const weathermanId = await qh.getId("role", "admin");
-		message.channel.send("```json\n" + JSON.parse(message.member._roles).includes(weathermanId) + "\n```");
-		console.log(JSON.parse(message.member._roles));
-		console.log("Includes: " + JSON.parse(message.member._roles).includes(weathermanId));
+		message.channel.send("```json\n" + message.member._roles.includes(String(weathermanId)) + "\n```");
+		console.log(message.member._roles);
+		console.log("Includes: " + message.member._roles.includes(String(weathermanId)));
 		if (!message.member.roles.cache.has(weathermanId)) {
 			// message.channel.send("You do not have the admin role.");
 			return;
