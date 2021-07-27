@@ -8,7 +8,7 @@ module.exports = {
 	async execute(message) {
 		const weathermanId = await qh.getId("role", "weatherman");
 		if (!message.member.roles.cache.has(weathermanId)) {
-			message.channel.send("You are not worthy of this command.");
+			message.channel.send("You do ot have the weatherman role.");
 			return;
 		}
 
