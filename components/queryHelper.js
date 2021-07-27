@@ -84,7 +84,6 @@ async function getId(type, name) {
 			FROM ids
 			WHERE type = $1 AND name = $2;
 		`, [type, name]);
-		console.log(results.rows[0].id);
 		return BigInt(results.rows[0].id);
 	} catch(err) {
 		console.error("Error in getId: " + err);
