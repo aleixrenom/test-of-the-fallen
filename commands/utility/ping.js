@@ -7,8 +7,7 @@ module.exports = {
 	cooldown: 1,
 	async execute(message) {
 		const weathermanId = await qh.getId("role", "admin");
-		message.channel.send("ID: " + weathermanId);
-		message.channel.send("Type: " + typeof weathermanId);
+		message.channel.send("```json\n" + message.member.roles + "\n```");
 		if (!message.member.roles.cache.has(weathermanId)) {
 			// message.channel.send("You do not have the admin role.");
 			return;
