@@ -32,7 +32,7 @@ module.exports = {
 					console.log("New hp: " + newHp + " of type " + typeof newHp);
 					await qh.setStorage("boss_hp", newHp.toString(), null, null);
 					console.log(message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp);
-					console.log(cf.client.channels.cache.get(869954406077067274));
+					console.log(cf.client.channels.cache.get('869954406077067274'));
 					cf.client.channels.cache.get(BigInt(await qh.getId("channel", "boss_hp"))).send(
 						message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
 					);
