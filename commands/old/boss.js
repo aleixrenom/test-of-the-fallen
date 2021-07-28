@@ -57,11 +57,11 @@ module.exports = {
 
 					const bossHpChannel = await qh.getId("channel", "boss_hp");
 					cf.client.channels.cache.get(bossHpChannel.toString()).send(
-						`__The Boss was damaged!__
-						**DM:** ${message.member.user.username}
-						**Old HP:** ${oldHp}
-						**Damage:** ${args[1]}
-						**New HP:** ${newHp}`
+						`__The Boss was damaged!__\n` + 
+						`**DM:** ${message.member.user.username}\n` + 
+						`**Old HP:** ${oldHp}\n` +
+						`**Damage:** ${args[1]}\n` +
+						`**New HP:** ${newHp}`
 						// message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
 					);
 					
@@ -72,7 +72,7 @@ module.exports = {
 				}
 			break;
 			default:
-				message.channel.send("Usage:\n+boss dmg [damage taken]\n+boss heal [health recovered]")
+				message.channel.send("Usage:\n`+boss dmg [damage taken]`\n`+boss heal [health recovered]`")
 			break;
 		}
 	},
