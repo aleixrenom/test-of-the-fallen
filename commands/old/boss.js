@@ -30,7 +30,11 @@ module.exports = {
 
 					const bossHpChannel = await qh.getId("channel", "boss_hp");
 					cf.client.channels.cache.get(bossHpChannel.toString()).send(
-						message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
+						`__The Boss was healed!__\n` + 
+						`**DM:** ${message.member.user.username}\n` + 
+						`**Old HP:** ${oldHp}\n` +
+						`**HP healed:** ${args[1]}\n` +
+						`**New HP:** ${newHp}`
 					);
 
 					message.channel.send("Boss HP updated successfuly.");
@@ -62,7 +66,6 @@ module.exports = {
 						`**Old HP:** ${oldHp}\n` +
 						`**Damage:** ${args[1]}\n` +
 						`**New HP:** ${newHp}`
-						// message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
 					);
 					
 					message.channel.send("Boss HP updated successfuly.");
