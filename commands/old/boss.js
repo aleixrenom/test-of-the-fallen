@@ -11,6 +11,8 @@ module.exports = {
 			return;
 		}
 
+		message.channel.send(args[1]);
+
 		switch(args[1]) {
 			case("heal"):
 				if (isNaN(parseInt(args[2]))) {
