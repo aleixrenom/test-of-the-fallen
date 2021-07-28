@@ -11,11 +11,9 @@ module.exports = {
 			return;
 		}
 
-		message.channel.send(args[1]);
-
-		switch(args[1]) {
+		switch(args[0]) {
 			case("heal"):
-				if (isNaN(parseInt(args[2]))) {
+				if (isNaN(parseInt(args[1]))) {
 					message.channel.send("Given value is not a number.");
 					return;
 				}
@@ -30,7 +28,7 @@ module.exports = {
 					console.log("Field: " + data[0].field_a + " of type " + typeof data[0].field_a);
 					const oldHp = parseInt(data[0].field_a);
 					console.log("Old hp: " + oldHp + " of type " + typeof oldHp);
-					const newHp = oldHp + parseInt(args[2]);
+					const newHp = oldHp + parseInt(args[1]);
 					console.log("New hp: " + newHp + " of type " + typeof newHp);
 					await qh.setStorage("boss_hp", newHp.toString(), null, null);
 					console.log(message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp);
