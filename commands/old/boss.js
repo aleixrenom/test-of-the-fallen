@@ -17,8 +17,11 @@ module.exports = {
 			try {
 				const data = await qh.getStorage("boss_hp");
 				console.log(data);
+				console.log("Field: " + data.field_a + " of type " + typeof data.field_a);
 				const oldHp = parseInt(data.field_a);
+				console.log("Old hp: " + oldHp + " of type " + typeof oldHp);
 				const newHp = oldHp + parseInt(args[1]);
+				console.log("New hp: " + newHp + " of type " + typeof newHp);
 				await qh.setStorage("boss_hp", newHp.toString(), null, null);
 				console.log(message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp);
 				cf.client.channels.cache.get(await qh.getId("channel", "boss_hp")).send(
