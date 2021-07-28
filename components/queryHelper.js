@@ -99,7 +99,7 @@ async function getStorage(field) {
 		console.log("Results from getStorage: " + JSON.parse(results, null, 2));
 		return results;
 	} catch(err) {
-		console.err("Error in getStorage: " + err);
+		console.error("Error in getStorage: " + err);
 	}
 }
 
@@ -111,7 +111,7 @@ async function setStorage(name, field_a, field_b, field_c) {
 			WHERE name = $4
 		`, [field_a, field_b, field_c, name]);
 	} catch(err) {
-		console.err("Error in setStorage: " + err);
+		console.error("Error in setStorage: " + err);
 	}
 }
 
