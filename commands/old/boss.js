@@ -24,19 +24,15 @@ module.exports = {
 
 				try {
 					const data = await qh.getStorage("boss_hp");
-					console.log(data[0]);
-					console.log("Field: " + data[0].field_a + " of type " + typeof data[0].field_a);
 					const oldHp = parseInt(data[0].field_a);
-					console.log("Old hp: " + oldHp + " of type " + typeof oldHp);
 					const newHp = oldHp + parseInt(args[1]);
-					console.log("New hp: " + newHp + " of type " + typeof newHp);
 					await qh.setStorage("boss_hp", newHp.toString(), null, null);
-					console.log(message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp);
+
 					const bossHpChannel = await qh.getId("channel", "boss_hp");
-					console.log(cf.client.channels.cache.get(bossHpChannel.toString()));
 					cf.client.channels.cache.get(bossHpChannel.toString()).send(
 						message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
 					);
+
 					message.channel.send("Boss HP updated successfuly.");
 				} catch(err) {
 					console.error("Error modifying the boss hp: " + err);
@@ -44,6 +40,31 @@ module.exports = {
 				}
 			break;
 			case("dmg" || "damage"):
+				if (isNaN(parseInt(args[1]))) {
+					message.channel.send("Given value is not a number.");
+					return;
+				}
+				if (args.length <= 1) {
+					message.channel.send("Specify an amount of HP to withdraw.");
+					return;
+				}
+
+				try {
+					const data = await qh.getStorage("boss_hp");
+					const oldHp = parseInt(data[0].field_a);
+					const newHp = oldHp - parseInt(args[1]);
+					await qh.setStorage("boss_hp", newHp.toString(), null, null);
+
+					const bossHpChannel = await qh.getId("channel", "boss_hp");
+					cf.client.channels.cache.get(bossHpChannel.toString()).send(
+						message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
+					);
+					
+					message.channel.send("Boss HP updated successfuly.");
+				} catch(err) {
+					console.error("Error modifying the boss hp: " + err);
+					message.channel.send("Error modifying the boss hp: " + err);
+				}
 			break;
 			default:
 				message.channel.send("Usage:\n+boss dmg [damage taken]\n+boss damage [damage taken]\n+boss heal [health recovered]")
