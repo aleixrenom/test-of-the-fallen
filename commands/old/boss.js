@@ -20,10 +20,10 @@ module.exports = {
 				console.log("Data type: " + typeof data);
 				const oldHp = parseInt(data.field_a);
 				const newHp = oldHp + parseInt(args[1]);
-				await qh.setStorage("boss_hp", newHp.toString, null, null);
-				console.log(message.member.id + " changed the boss HP from " + oldHp + " to " + newHp);
+				await qh.setStorage("boss_hp", newHp.toString(), null, null);
+				console.log(message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp);
 				cf.client.channels.cache.get(await qh.getId("channel", "boss_hp")).send(
-					message.member.id + " changed the boss HP from " + oldHp + " to " + newHp
+					message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
 				);
 				message.channel.send("Boss HP updated successfuly.");
 			} catch(err) {
