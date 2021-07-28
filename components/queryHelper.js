@@ -90,6 +90,14 @@ async function getId(type, name) {
 	}
 }
 
+async function getStorage() {
+	try {
+		
+	} catch(err) {
+		console.err("Error in getStorage: " + err)
+	}
+}
+
 module.exports = {
 	getWeatherSchedule,
 	updateWeatherSchedule,
