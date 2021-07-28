@@ -90,11 +90,28 @@ async function getId(type, name) {
 	}
 }
 
-async function getStorage() {
+async function getStorage(field) {
 	try {
-		
+		const results = await dbclient.query(`
+			SELECT * FROM arbitrary_storage
+			WHERE name = $1
+		`, [field]);
+		console.log("Results from getStorage: " + results);
+		return results;
 	} catch(err) {
-		console.err("Error in getStorage: " + err)
+		console.err("Error in getStorage: " + err);
+	}
+}
+
+async function setStorage(name, field_a, field_b, field_c) {
+	try {
+		await dbclient.query(`
+			UPDATE arbitrary_storage
+			SET field_a = $1, field_b = $2, field_c = $3
+			WHERE name = $4
+		`, [field_a, field_b, field_c, name]);
+	} catch(err) {
+		console.err("Error in setStorage: " + err);
 	}
 }
 
@@ -102,5 +119,7 @@ module.exports = {
 	getWeatherSchedule,
 	updateWeatherSchedule,
 	readTable,
-	getId
+	getId,
+	getStorage,
+	setStorage
 }
