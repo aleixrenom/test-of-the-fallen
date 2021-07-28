@@ -17,7 +17,6 @@ module.exports = {
 			try {
 				const data = await qh.getStorage("boss_hp");
 				console.log(data);
-				console.log("Data type: " + typeof data);
 				const oldHp = parseInt(data.field_a);
 				const newHp = oldHp + parseInt(args[1]);
 				await qh.setStorage("boss_hp", newHp.toString(), null, null);
