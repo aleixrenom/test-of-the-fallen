@@ -39,7 +39,7 @@ module.exports = {
 					message.channel.send("Error modifying the boss hp: " + err);
 				}
 			break;
-			case("dmg" || "damage"):
+			case("dmg"):
 				if (isNaN(parseInt(args[1]))) {
 					message.channel.send("Given value is not a number.");
 					return;
@@ -57,7 +57,12 @@ module.exports = {
 
 					const bossHpChannel = await qh.getId("channel", "boss_hp");
 					cf.client.channels.cache.get(bossHpChannel.toString()).send(
-						message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
+						`__The Boss was damaged!__
+						**DM:** ${message.member.user.username}
+						**Old HP:** ${oldHp}
+						**Damage:** ${args[1]}
+						**New HP:** ${newHp}`
+						// message.member.user.username + " changed the boss HP from " + oldHp + " to " + newHp
 					);
 					
 					message.channel.send("Boss HP updated successfuly.");
@@ -67,7 +72,7 @@ module.exports = {
 				}
 			break;
 			default:
-				message.channel.send("Usage:\n+boss dmg [damage taken]\n+boss damage [damage taken]\n+boss heal [health recovered]")
+				message.channel.send("Usage:\n+boss dmg [damage taken]\n+boss heal [health recovered]")
 			break;
 		}
 	},
