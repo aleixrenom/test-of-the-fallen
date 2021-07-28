@@ -96,7 +96,6 @@ async function getStorage(field) {
 			SELECT * FROM arbitrary_storage
 			WHERE name = $1
 		`, [field]);
-		console.log("Results from getStorage: " + JSON.parse(results));
 		return results;
 	} catch(err) {
 		console.error("Error in getStorage: " + err);
