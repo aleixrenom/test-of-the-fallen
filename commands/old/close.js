@@ -28,6 +28,7 @@ module.exports = {
 							}
 						))
 						.catch(console.error);
+					message.channel.setPosition(message.channel.parent.children.size-1);
 					message.delete();
 				} catch(e) {
 					console.error("Error closing the adventure channel: " + e);
