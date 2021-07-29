@@ -24,6 +24,7 @@ module.exports = {
 				break;
 			default:
 				message.channel.send("Are you sure you want to close this adventure channel? If so, use `+close confirm`")
+					.then(m => m.delete({ timeout: 5000 }));
 				message.delete({ timeout: 5000 });
 				break;
 		}
