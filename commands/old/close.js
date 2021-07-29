@@ -22,8 +22,12 @@ module.exports = {
 					message.channel.setName("empty");
 					message.channel.send("```\n-\n```");
 					message.channel.messages.fetchPinned()
-						.then(messages => console.log(messages))
-						// .then(messages => messages.each())
+						// .then(messages => console.log(messages))
+						.then(messages => messages.each(
+							(m) => {
+								m.unpin();
+							}
+						))
 						.catch(console.error);
 					message.delete();
 				} catch(e) {
