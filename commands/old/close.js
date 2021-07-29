@@ -16,6 +16,7 @@ module.exports = {
 				try {
 					message.channel.setName("empty");
 					message.channel.send("```\n-\n```");
+					message.delete();
 				} catch(e) {
 					console.error("Error closing the adventure channel: " + e);
 					message.channel.send("Error closing the adventure channel: " + e);
@@ -23,6 +24,7 @@ module.exports = {
 				break;
 			default:
 				message.channel.send("Are you sure you want to close this adventure channel? If so, use `+close confirm`")
+				message.delete({ timeout: 5000 });
 				break;
 		}
 	},
