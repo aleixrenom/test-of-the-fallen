@@ -21,6 +21,10 @@ module.exports = {
 				try {
 					message.channel.setName("empty");
 					message.channel.send("```\n-\n```");
+					message.channel.messages.fetchPinned()
+						.then(messages => console.log(messages))
+						// .then(messages => messages.each())
+						.catch(console.error);
 					message.delete();
 				} catch(e) {
 					console.error("Error closing the adventure channel: " + e);
