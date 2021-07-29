@@ -6,6 +6,6 @@ module.exports = {
 	description: 'Ping!',
 	cooldown: 1,
 	async execute(message) {
-		message.channel.send('Pong.').then().catch(err => console.error(err));
+		message.channel.send('```\n\n\n```').then().catch(err => console.error(err));
 	},
 };
