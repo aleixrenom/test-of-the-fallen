@@ -15,7 +15,7 @@ module.exports = {
 			case "confirm":
 				try {
 					message.channel.setName("empty");
-					
+					message.channel.send("```\n-\n```");
 				} catch(e) {
 					console.error("Error closing the adventure channel: " + e);
 					message.channel.send("Error closing the adventure channel: " + e);
