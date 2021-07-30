@@ -8,7 +8,6 @@ const dbclient = new Pool({
 
 async function getWeatherSchedule() {
 	try {
-		console.log("Connected successfuly.")
 		const results = await dbclient.query(`
 		SELECT *
 		FROM WeatherSchedule
@@ -22,7 +21,6 @@ async function getWeatherSchedule() {
 
 async function updateWeatherSchedule(weatherObject) {
 	try {
-		console.log("Connected successfuly.")
 		const results = await dbclient.query(`
 		UPDATE WeatherSchedule
 		SET 
@@ -48,7 +46,6 @@ async function updateWeatherSchedule(weatherObject) {
 			weatherObject.forecastchannel,
 			weatherObject.weatherchannel
 		])
-		console.log("Weather schedule updated successfuly.")
 	} catch(err) {
 		console.error("Error in getWeatherSchedule: " + err)
 	} 
@@ -90,6 +87,12 @@ async function getId(type, name) {
 	}
 }
 
+/**
+ * Ask for a row in the Arbitrary Storage table.
+ * 
+ * @param {String} field Name of the field you want to get data from.
+ * @returns {Object} The requested row.
+ */
 async function getStorage(field) {
 	try {
 		const results = await dbclient.query(`
@@ -102,6 +105,14 @@ async function getStorage(field) {
 	}
 }
 
+/**
+ * Saves given data to the given field in the Arbitrary Storage table. Fields on the row can be null, but not the name.
+ * 
+ * @param {String} name Name of the field you want to save the data to.
+ * @param {String} field_a First field of the row.
+ * @param {String} field_b Second field of the row.
+ * @param {String} field_c Third field of the row.
+ */
 async function setStorage(name, field_a, field_b, field_c) {
 	try {
 		await dbclient.query(`
