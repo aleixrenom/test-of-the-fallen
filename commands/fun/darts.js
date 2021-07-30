@@ -46,16 +46,17 @@ module.exports = {
 			default:
 				message.channel.send(
 					"Possible arguments:" +
-					"\n`+darts start [optional difficulty]` - Initiates or restarts a game of darts with 5 throws. The optional difficulties are: 1 to throw from a distance of 5ft, 2 to throw from a distance of 8ft (the defaul), and 3 to throw from a distance of 11ft." +
-					"\n`+darts throw [modifier]` - The darts modifier is your dexterity modifier, and you can add your proficiency modifier if you have proficiency with simple weapons or with darts in particular." +
-					"\n`+darts dcs` - Check the score DCs relative to the throw difficulty."
+					"\n\n`+darts start [optional difficulty]`\nInitiates or restarts a game of darts with 5 throws. The optional difficulties are: 1 to throw from a distance of 5ft, 2 to throw from a distance of 8ft (the defaul), and 3 to throw from a distance of 11ft." +
+					"\n\n`+darts throw [modifier]`\nThe darts modifier is your dexterity modifier, and you can add your proficiency modifier if you have proficiency with simple weapons or with darts in particular." +
+					"\n\n`+darts dcs`\nCheck the score DCs relative to the throw difficulty."
 				)
 				break;
 			case "start":
 				try {
 					// const data = await qh.getStorage(message.author.id);
-					const data = await qh.getStorage("boss_hp");
+					const data = await qh.getStorage(args[1]);
 					console.log(data);
+					message.channel.send(data.name.toString());
 				} catch(e) {
 					console.error("Error starting a game of darts: " + e);
 					message.channel.send("Error starting a game of darts: " + e);
