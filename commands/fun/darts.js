@@ -55,8 +55,14 @@ module.exports = {
 				try {
 					// const data = await qh.getStorage(message.author.id);
 					const data = await qh.getStorage(args[1]);
-					console.log(data);
-					message.channel.send(data[0].name + " of type " + typeof data[0].name);
+					
+					if (typeof data[0].name != "undefined") { // if this exists in the table...
+						message.channel.send("That does exist in the table.");
+					} else { // if there's nothing with that name in the table...
+						message.channel.send("That's not in the table."); 
+					}
+
+					// message.channel.send(data[0].name + " of type " + typeof data[0].name);
 				} catch(e) {
 					console.error("Error starting a game of darts: " + e);
 					message.channel.send("Error starting a game of darts: " + e);
