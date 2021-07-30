@@ -115,13 +115,45 @@ async function getStorage(field) {
  */
 async function setStorage(name, field_a, field_b, field_c) {
 	try {
-		await dbclient.query(`
-			UPDATE arbitrary_storage
-			SET field_a = $1, field_b = $2, field_c = $3
-			WHERE name = $4
-		`, [field_a, field_b, field_c, name]);
+
+		const data = await getStorage(name);
+		if (data[0] != undefined) { // if this exists in the table, update.
+
+			await dbclient.query(`
+				UPDATE arbitrary_storage
+				SET field_a = $1, field_b = $2, field_c = $3
+				WHERE name = $4
+			`, [field_a, field_b, field_c, name]);
+
+		} else { // if there's nothing with that name in the table, add it.
+
+			await dbclient.query(`
+				INSERT INTO arbitrary_storage VALUES
+					($1, $2, $3, $4)
+			`, [field_a, field_b, field_c, name]);
+
+		}
+
+
 	} catch(err) {
 		console.error("Error in setStorage: " + err);
+	}
+}
+
+/**
+ * Delete a row in the Arbitrary Storage table.
+ * 
+ * @param {String} field Name of the field you want to delete.
+ */
+ async function deleteStorage(field) {
+	try {
+		const results = await dbclient.query(`
+			DELETE FROM arbitrary_storage
+			WHERE name = $1
+		`, [field]);
+		return results.rows;
+	} catch(err) {
+		console.error("Error in deleteStorage: " + err);
 	}
 }
 
@@ -131,5 +163,6 @@ module.exports = {
 	readTable,
 	getId,
 	getStorage,
-	setStorage
+	setStorage,
+	deleteStorage
 }
