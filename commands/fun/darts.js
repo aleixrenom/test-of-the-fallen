@@ -56,7 +56,7 @@ module.exports = {
 					// const data = await qh.getStorage(message.author.id);
 					const data = await qh.getStorage(args[1]);
 					console.log(data);
-					message.channel.send(data.name.toString());
+					message.channel.send(toString(data.name) + " of type " + typeof data.name);
 				} catch(e) {
 					console.error("Error starting a game of darts: " + e);
 					message.channel.send("Error starting a game of darts: " + e);
