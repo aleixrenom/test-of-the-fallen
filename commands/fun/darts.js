@@ -190,11 +190,11 @@ module.exports = {
 
 				break;
 			case "score":
-				// const data = await qh.getStorage(message.author.id);
+				const scoreData = await qh.getStorage(message.author.id);
 
-				if (data[0] != undefined) { // if this exists in the table...
+				if (scoreData[0] != undefined) { // if this exists in the table...
 					message.channel.send(
-						`Your current score is **${data[0].field_b}** with **${data[0].field_a}** throws remaining, throwing from a distance of **${scores[parseInt(data[0].field_c)-1].distance}**.`
+						`Your current score is **${scoreData[0].field_b}** with **${scoreData[0].field_a}** throws remaining, throwing from a distance of **${scores[parseInt(scoreData[0].field_c)-1].distance}**.`
 					)
 				} else { // if there's nothing with that name in the table...
 					message.channel.send("You haven't started a game yet. Use `+darts start [optional difficulty]` to start one."); 
@@ -220,7 +220,7 @@ module.exports = {
 					.setFooter(message.member.nickname, message.author.defaultAvatarURL);
 
 				message.channel.send(dcsEmbed);
-				
+
 				break;
 		}
 	},
