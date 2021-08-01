@@ -47,11 +47,11 @@ module.exports = {
 		switch(args[0]) {
 			default:
 				const dataB = await qh.getStorage(message.author.id);
-				const diff = parseInt(dataB.field_c);
+				const diffe = parseInt(dataB.field_c);
 				console.log("Difficulty: " + parseInt(dataB.field_c) + " of type " + typeof parseInt(dataB.field_c));
-				const throwDistance = scores[diff-1].distance;
-				console.log("Difficulty 2: " + scores[diff-1]);
-				console.log("Difficulty 2 distance: " + scores[diff-1].distance);
+				const throwDistancee = scores[diffe-1].distance;
+				console.log("Difficulty 2: " + scores[diffe-1]);
+				console.log("Difficulty 2 distance: " + scores[diffe-1].distance);
 				const helpEmbed = {
 					"color": 13569193,
 					"author": {
