@@ -164,7 +164,7 @@ module.exports = {
 
 				const throwScore = checkScore(result, diff);
 				console.log("throwScore: " + throwScore + " of type " + typeof throwScore);
-				const throwNumber = 5 - parseInt(data[0].field_a);
+				const throwNumber = 6 - parseInt(data[0].field_a);
 				console.log("throwNumber: " + throwNumber + " of type " + typeof throwNumber);
 				const gameScore = parseInt(data[0].field_b) + throwScore;
 				console.log("gameScore: " + gameScore + " of type " + typeof gameScore);
@@ -181,7 +181,6 @@ module.exports = {
 					)
 					.setFooter(message.member.nickname, message.author.defaultAvatarURL)
 
-				message.channel.send(`<@${message.author.id}> throws a dart!\n`);
 				message.channel.send(throwEmbed)
 
 				const throwsRemaining = parseInt(data[0].field_a) - 1;
