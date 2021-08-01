@@ -190,7 +190,7 @@ module.exports = {
 					message.channel.send(`Game completed! Your final score is: **${gameScore}**`);
 				} else {
 					// Fields: a = throws remaining, b = current score, c = difficulty
-					await qh.setStorage(message.author.id, toString(throwsRemaining), toString(gameScore), data[0].field_c);
+					await qh.setStorage(message.author.id, throwsRemaining, gameScore, data[0].field_c);
 				}
 
 				break;
