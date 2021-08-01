@@ -68,7 +68,7 @@ function checkIfDayMonth() {
 
  function changeServerIcon() {
 	 try {
-		const rotf = cf.client.guilds.get(data.rotfId);
+		const rotf = cf.client.guilds.fetch(data.rotfId);
 		if (checkIfDayMonth()) {
 		   rotf.setIcon(data.images.day);
 		} else {
