@@ -1,4 +1,4 @@
-
+/*
 const qh = require('../../components/queryHelper.js');
 const cf = require('../../components/commonFunctions.js');
 const { parse } = require('dotenv/types');
@@ -216,3 +216,4 @@ module.exports = {
 		}
 	},
 };
+*/
