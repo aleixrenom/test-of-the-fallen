@@ -46,6 +46,9 @@ module.exports = {
 
 		switch(args[0]) {
 			default:
+				console.log("Scores array: " + scores);
+				console.log("Difficulty 2: " + scores[1]);
+				console.log("Difficulty 2 distance: " + scores[1].distance);
 				const helpEmbed = {
 					"color": 13569193,
 					"author": {
