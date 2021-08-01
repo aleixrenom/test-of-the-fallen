@@ -175,7 +175,7 @@ module.exports = {
 					.setDescription(rollString)
 					.setThumbnail('https://img.icons8.com/emoji/452/bullseye.png')
 					.addFields(
-						{ name: 'Throw score', value: (throwScore >= 50) ? "50 - **Bullseye!**" : toString(throwScore) },
+						{ name: 'Throw score', value: (throwScore >= 50) ? "50 - **Bullseye!**" : throwScore },
 						{ name: 'Total game score', value: gameScore },
 						{ name: 'Throw distance', value: throwDistance }
 					)
