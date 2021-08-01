@@ -145,7 +145,7 @@ module.exports = {
 				const throwDistance = scores[diff-1].distance;
 				console.log("throwDistance: " + throwDistance + " of type " + typeof throwDistance);
 
-				async function checkScore(result, throwDifficulty) {
+				function checkScore(result, throwDifficulty) {
 					const n = parseInt(result);
 					if (n >= scores[throwDifficulty-1].scoredcs.fifty) {
 						return 50;
@@ -181,7 +181,8 @@ module.exports = {
 					)
 					.setFooter(message.member.nickname, message.author.defaultAvatarURL)
 
-				message.channel.send(`<@${message.author.id}> throws a dart!\n` + throwEmbed);
+				message.channel.send(`<@${message.author.id}> throws a dart!\n`);
+				message.channel.send(throwEmbed)
 
 				const throwsRemaining = parseInt(data[0].field_a) - 1;
 				console.log("throwsRemaining: " + throwsRemaining + " of type " + typeof throwsRemaining);
