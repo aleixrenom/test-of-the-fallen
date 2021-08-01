@@ -47,6 +47,8 @@ module.exports = {
 		switch(args[0]) {
 			default:
 				const dataB = await qh.getStorage(message.author.id);
+				console.log("Without JSON: " + dataB);
+				console.log("With JSON: " + JSON.stringify(dataB));
 				const diffe = parseInt(dataB.field_c);
 				console.log("Difficulty: " + parseInt(dataB.field_c) + " of type " + typeof parseInt(dataB.field_c));
 				const throwDistancee = scores[diffe-1].distance;
