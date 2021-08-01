@@ -1,49 +1,49 @@
-/*
+// /*
 const qh = require('../../components/queryHelper.js');
 const cf = require('../../components/commonFunctions.js');
-const { parse } = require('dotenv/types');
-const scores = 
-{
-	"1": { 
-		"difficulty": "1",
-		"distance": "5ft",
-		"scoredcs": {
-			"fifty": "14",
-			"thirty": "12",
-			"twenty": "10",
-			"ten": "8",
-			"one": "6"
-		}
-	},
-	"2": { 
-		"difficulty": "2",
-		"distance": "8ft",
-		"scoredcs": {
-			"fifty": "20",
-			"thirty": "17",
-			"twenty": "14",
-			"ten": "11",
-			"one": "8"
-		}
-	},
-	"3": { 
-		"difficulty": "3",
-		"distance": "11ft",
-		"scoredcs": {
-			"fifty": "25",
-			"thirty": "21",
-			"twenty": "18",
-			"ten": "15",
-			"one": "12"
-		}
-	}
-}
 
 module.exports = {
 	name: 'darts',
 	description: 'Allows you to play a game of darts.',
 	cooldown: 1,
 	async execute(message, args) {
+		const scores = 
+			{
+				"1": { 
+					"difficulty": "1",
+					"distance": "5ft",
+					"scoredcs": {
+						"fifty": "14",
+						"thirty": "12",
+						"twenty": "10",
+						"ten": "8",
+						"one": "6"
+					}
+				},
+				"2": { 
+					"difficulty": "2",
+					"distance": "8ft",
+					"scoredcs": {
+						"fifty": "20",
+						"thirty": "17",
+						"twenty": "14",
+						"ten": "11",
+						"one": "8"
+					}
+				},
+				"3": { 
+					"difficulty": "3",
+					"distance": "11ft",
+					"scoredcs": {
+						"fifty": "25",
+						"thirty": "21",
+						"twenty": "18",
+						"ten": "15",
+						"one": "12"
+					}
+				}
+			}
+
 		switch(args[0]) {
 			default:
 				const helpEmbed = {
@@ -216,4 +216,4 @@ module.exports = {
 		}
 	},
 };
-*/
+// */
