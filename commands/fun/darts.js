@@ -46,14 +46,6 @@ module.exports = {
 
 		switch(args[0]) {
 			default:
-				const dataB = await qh.getStorage(message.author.id);
-				console.log("Without JSON: " + dataB);
-				console.log("With JSON: " + JSON.stringify(dataB));
-				const diffe = parseInt(dataB[0].field_c);
-				console.log("Difficulty: " + parseInt(dataB[0].field_c) + " of type " + typeof parseInt(dataB[0].field_c));
-				const throwDistancee = scores[diffe-1].distance;
-				console.log("Difficulty 2: " + scores[diffe-1]);
-				console.log("Difficulty 2 distance: " + scores[diffe-1].distance);
 				const helpEmbed = {
 					"color": 13569193,
 					"author": {
@@ -145,7 +137,7 @@ module.exports = {
 				const rollString = cf.roll("1d20+" + args[1]);
 				const result = rollString.split(" ").pop();
 
-				const diff = parseInt(data.field_c);
+				const diff = parseInt(data[0].field_c);
 				const throwDistance = scores[diff-1].distance;
 
 				async function checkScore(result, throwDifficulty) {
@@ -166,8 +158,8 @@ module.exports = {
 				}
 
 				const throwScore = checkScore(result, diff);
-				const throwNumber = 5 - parseInt(data.field_a);
-				const gameScore = parseInt(data.field_b) + throwScore;
+				const throwNumber = 5 - parseInt(data[0].field_a);
+				const gameScore = parseInt(data[0].field_b) + throwScore;
 
 				const throwEmbed = 
 				{
@@ -204,13 +196,13 @@ module.exports = {
 
 				message.channel.send({ embed: throwEmbed });
 
-				const throwsRemaining = parseInt(data.field_a) - 1
+				const throwsRemaining = parseInt(data[0].field_a) - 1
 				if (throwsRemaining <= 0) {
 					await qh.deleteStorage(message.author.id);
 					message.channel.send(`Game completed! Your final score is: **${gameScore}**`);
 				} else {
 					// Fields: a = throws remaining, b = current score, c = difficulty
-					await qh.setStorage(message.author.id, toString(throwsRemaining), toString(gameScore), data.field_c);
+					await qh.setStorage(message.author.id, toString(throwsRemaining), toString(gameScore), data[0].field_c);
 				}
 
 				break;
