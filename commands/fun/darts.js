@@ -79,12 +79,6 @@ module.exports = {
 				try {
 					const data = await qh.getStorage(message.author.id);
 					
-					if (data[0] != undefined) { // if this exists in the table...
-						message.channel.send("Previously active game restarted.");
-					} else { // if there's nothing with that name in the table...
-						message.channel.send("Darts game started, you can now use `+darts throw [modifier]` to throw a dart."); 
-					}
-
 					// if they have given a number between 1 and 3...
 					if (args[1] != undefined && 
 						(
@@ -93,6 +87,12 @@ module.exports = {
 							args[1] == "3"
 						)
 					) {
+
+						if (data[0] != undefined) { // if this exists in the table...
+							message.channel.send("Previously active game restarted.");
+						} else { // if there's nothing with that name in the table...
+							message.channel.send("Darts game started, you can now use `+darts throw [modifier]` to throw a dart."); 
+						}
 
 						const selectedDificulty = args[1];
 						// Fields: a = throws remaining, b = current score, c = difficulty
@@ -136,14 +136,10 @@ module.exports = {
 				}
 
 				const rollString = cf.roll("1d20+" + args[1]);
-				console.log("rollString: " + rollString + " of type " + typeof rollString);
 				const result = rollString.split(" ").pop();
-				console.log("result: " + result + " of type " + typeof result);
 
 				const diff = parseInt(data[0].field_c);
-				console.log("diff: " + diff + " of type " + typeof diff);
 				const throwDistance = scores[diff-1].distance;
-				console.log("throwDistance: " + throwDistance + " of type " + typeof throwDistance);
 
 				function checkScore(result, throwDifficulty) {
 					const n = parseInt(result);
@@ -163,11 +159,8 @@ module.exports = {
 				}
 
 				const throwScore = checkScore(result, diff);
-				console.log("throwScore: " + throwScore + " of type " + typeof throwScore);
 				const throwNumber = 6 - parseInt(data[0].field_a);
-				console.log("throwNumber: " + throwNumber + " of type " + typeof throwNumber);
 				const gameScore = parseInt(data[0].field_b) + throwScore;
-				console.log("gameScore: " + gameScore + " of type " + typeof gameScore);
 
 				const throwEmbed = new Discord.MessageEmbed()
 					.setColor('#A92E51')
@@ -184,7 +177,6 @@ module.exports = {
 				message.channel.send(throwEmbed)
 
 				const throwsRemaining = parseInt(data[0].field_a) - 1;
-				console.log("throwsRemaining: " + throwsRemaining + " of type " + typeof throwsRemaining);
 				if (throwsRemaining <= 0) {
 					await qh.deleteStorage(message.author.id);
 					message.channel.send(`Game completed! Your final score is: **${gameScore}**`);
