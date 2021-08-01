@@ -136,10 +136,14 @@ module.exports = {
 				}
 
 				const rollString = cf.roll("1d20+" + args[1]);
+				console.log("rollString: " + rollString + " of type " + typeof rollString);
 				const result = rollString.split(" ").pop();
+				console.log("result: " + result + " of type " + typeof result);
 
 				const diff = parseInt(data[0].field_c);
+				console.log("diff: " + diff + " of type " + typeof diff);
 				const throwDistance = scores[diff-1].distance;
+				console.log("throwDistance: " + throwDistance + " of type " + typeof throwDistance);
 
 				async function checkScore(result, throwDifficulty) {
 					const n = parseInt(result);
@@ -159,8 +163,11 @@ module.exports = {
 				}
 
 				const throwScore = checkScore(result, diff);
+				console.log("throwScore: " + throwScore + " of type " + typeof throwScore);
 				const throwNumber = 5 - parseInt(data[0].field_a);
+				console.log("throwNumber: " + throwNumber + " of type " + typeof throwNumber);
 				const gameScore = parseInt(data[0].field_b) + throwScore;
+				console.log("gameScore: " + gameScore + " of type " + typeof gameScore);
 
 				const throwEmbed = new Discord.MessageEmbed()
 					.setColor('#A92E51')
@@ -174,40 +181,10 @@ module.exports = {
 					)
 					.setFooter(message.member.nickname, message.author.defaultAvatarURL)
 
-				const throwEmbedX = 
-				{
-					"content": `<@${message.author.id}> throws a dart!`,
-					"embed": {
-					  "title": `Throw ${throwNumber} out of 5`,
-					  "description": rollString, 
-					  "color": 11087441,
-					  "footer": {
-						"icon_url": message.author.defaultAvatarURL,
-						"text": message.member.nickname
-					  },
-					  "thumbnail": {
-						"url": "https://img.icons8.com/emoji/452/bullseye.png"
-					  },
-					  "fields": [
-						{
-						  "name": "Throw score",
-						  "value": (throwScore >= 50) ? "50 - **Bullseye!**" : toString(throwScore)
-						},
-						{
-						  "name": "Total game score",
-						  "value": gameScore
-						},
-						{
-						  "name": "Throw distance",
-						  "value": throwDistance
-						}
-					  ]
-					}
-				}
+				message.channel.send(`<@${message.author.id}> throws a dart!\n` + throwEmbed);
 
-				message.channel.send(throwEmbed);
-
-				const throwsRemaining = parseInt(data[0].field_a) - 1
+				const throwsRemaining = parseInt(data[0].field_a) - 1;
+				console.log("throwsRemaining: " + throwsRemaining + " of type " + typeof throwsRemaining);
 				if (throwsRemaining <= 0) {
 					await qh.deleteStorage(message.author.id);
 					message.channel.send(`Game completed! Your final score is: **${gameScore}**`);
