@@ -190,7 +190,7 @@ module.exports = {
 
 				break;
 			case "score":
-				const data = await qh.getStorage(message.author.id);
+				// const data = await qh.getStorage(message.author.id);
 
 				if (data[0] != undefined) { // if this exists in the table...
 					message.channel.send(
