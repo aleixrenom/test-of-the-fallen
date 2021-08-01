@@ -46,9 +46,9 @@ module.exports = {
 
 		switch(args[0]) {
 			default:
-				const data = await qh.getStorage(message.author.id);
-				const diff = parseInt(data.field_c);
-				console.log("Difficulty: " + parseInt(data.field_c) + " of type " + typeof parseInt(data.field_c));
+				const dataB = await qh.getStorage(message.author.id);
+				const diff = parseInt(dataB.field_c);
+				console.log("Difficulty: " + parseInt(dataB.field_c) + " of type " + typeof parseInt(dataB.field_c));
 				const throwDistance = scores[diff-1].distance;
 				console.log("Difficulty 2: " + scores[diff-1]);
 				console.log("Difficulty 2 distance: " + scores[diff-1].distance);
