@@ -1,6 +1,7 @@
 // /*
 const qh = require('../../components/queryHelper.js');
 const cf = require('../../components/commonFunctions.js');
+const Discord = require('discord.js');
 
 module.exports = {
 	name: 'darts',
@@ -161,7 +162,19 @@ module.exports = {
 				const throwNumber = 5 - parseInt(data[0].field_a);
 				const gameScore = parseInt(data[0].field_b) + throwScore;
 
-				const throwEmbed = 
+				const throwEmbed = new Discord.MessageEmbed()
+					.setColor('#A92E51')
+					.setTitle(`Throw ${throwNumber} out of 5`)
+					.setDescription(rollString)
+					.setThumbnail('https://img.icons8.com/emoji/452/bullseye.png')
+					.addFields(
+						{ name: 'Throw score', value: (throwScore >= 50) ? "50 - **Bullseye!**" : toString(throwScore) },
+						{ name: 'Total game score', value: gameScore },
+						{ name: 'Throw distance', value: throwDistance }
+					)
+					.setFooter(message.member.nickname, message.author.defaultAvatarURL)
+
+				const throwEmbedX = 
 				{
 					"content": `<@${message.author.id}> throws a dart!`,
 					"embed": {
@@ -176,10 +189,6 @@ module.exports = {
 						"url": "https://img.icons8.com/emoji/452/bullseye.png"
 					  },
 					  "fields": [
-						{
-						  "name": `Throw ${throwNumber} out of 5`,
-						  "value": rollString
-						},
 						{
 						  "name": "Throw score",
 						  "value": (throwScore >= 50) ? "50 - **Bullseye!**" : toString(throwScore)
@@ -196,7 +205,7 @@ module.exports = {
 					}
 				}
 
-				message.channel.send({ embed: throwEmbed });
+				message.channel.send(throwEmbed);
 
 				const throwsRemaining = parseInt(data[0].field_a) - 1
 				if (throwsRemaining <= 0) {
