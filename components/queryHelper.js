@@ -130,7 +130,7 @@ async function setStorage(name, field_a, field_b, field_c) {
 			await dbclient.query(`
 				INSERT INTO arbitrary_storage VALUES
 					($1, $2, $3, $4)
-			`, [field_a, field_b, field_c, name]);
+			`, [name, field_a, field_b, field_c]);
 
 		}
 
