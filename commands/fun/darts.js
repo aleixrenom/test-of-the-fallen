@@ -72,7 +72,7 @@ module.exports = {
 					]
 				  };
 
-				  message.channel.send(helpEmbed);
+				  message.channel.send({ embed: helpEmbed });
 				// message.channel.send(
 				// 	"Possible arguments:" +
 				// 	"\n\n`+darts start [optional difficulty]`\nInitiates or restarts a game of darts with 5 throws. The optional difficulties are: 1 to throw from a distance of 5ft, 2 to throw from a distance of 8ft (the defaul), and 3 to throw from a distance of 11ft." +
@@ -201,7 +201,7 @@ module.exports = {
 					}
 				}
 
-				message.channel.send(throwEmbed);
+				message.channel.send({ embed: throwEmbed });
 
 				const throwsRemaining = parseInt(data.field_a) - 1
 				if (throwsRemaining <= 0) {
