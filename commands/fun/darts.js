@@ -12,6 +12,7 @@ module.exports = {
 			[
 				{ 
 					"difficulty": "1",
+					"name": "Easy",
 					"distance": "5ft",
 					"scoredcs": {
 						"fifty": "14",
@@ -23,6 +24,7 @@ module.exports = {
 				},
 				{ 
 					"difficulty": "2",
+					"name": "Medium",
 					"distance": "8ft",
 					"scoredcs": {
 						"fifty": "20",
@@ -34,6 +36,7 @@ module.exports = {
 				},
 				{ 
 					"difficulty": "3",
+					"name": "Hard",
 					"distance": "11ft",
 					"scoredcs": {
 						"fifty": "25",
@@ -184,6 +187,43 @@ module.exports = {
 					// Fields: a = throws remaining, b = current score, c = difficulty
 					await qh.setStorage(message.author.id, throwsRemaining, gameScore, data[0].field_c);
 				}
+
+				break;
+			case "score":
+				const data = await qh.getStorage(message.author.id);
+
+				if (data[0] != undefined) { // if this exists in the table...
+					message.channel.send(
+						`Your current score is **${data[0].field_b}** with **${data[0].field_a}** throws remaining, throwing from a distance of **${scores[parseInt(data[0].field_c)-1].distance}**.`
+					)
+				} else { // if there's nothing with that name in the table...
+					message.channel.send("You haven't started a game yet. Use `+darts start [optional difficulty]` to start one."); 
+				}
+
+				break;
+			case "dcs":
+				let fields = {};
+
+				scores.forEach(element => {
+					fields[element.name] = { 
+						name: `${element.difficulty} - ${element.name} - ${element.distance}`,
+						value: `50 points = DC ${element.scoredcs.fifty}\n30 points = DC ${element.scoredcs.thirty}\n20 points = DC ${element.scoredcs.twenty}\n10 points = DC ${element.scoredcs.ten}\n1 point = DC ${element.scoredcs.one}`
+					}
+				})
+
+				console.log(fields);
+
+				const dcsEmbed = new Discord.MessageEmbed()
+					.setColor('#A92E51')
+					.setTitle("DCs")
+					.setDescription("Points received depending on the game's difficulty and the throw result.")
+					.setThumbnail('https://img.icons8.com/emoji/452/bullseye.png')
+					.addFields(
+						{ name: 'Throw score', value: (throwScore >= 50) ? "50 - **Bullseye!**" : throwScore },
+						{ name: 'Total game score', value: gameScore },
+						{ name: 'Throw distance', value: throwDistance }
+					)
+					.setFooter(message.member.nickname, message.author.defaultAvatarURL)
 
 				break;
 		}
