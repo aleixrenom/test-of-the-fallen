@@ -8,8 +8,8 @@ module.exports = {
 	cooldown: 1,
 	async execute(message, args) {
 		const scores = 
-			{
-				"1": { 
+			[
+				{ 
 					"difficulty": "1",
 					"distance": "5ft",
 					"scoredcs": {
@@ -20,7 +20,7 @@ module.exports = {
 						"one": "6"
 					}
 				},
-				"2": { 
+				{ 
 					"difficulty": "2",
 					"distance": "8ft",
 					"scoredcs": {
@@ -31,7 +31,7 @@ module.exports = {
 						"one": "8"
 					}
 				},
-				"3": { 
+				{ 
 					"difficulty": "3",
 					"distance": "11ft",
 					"scoredcs": {
@@ -42,7 +42,7 @@ module.exports = {
 						"one": "12"
 					}
 				}
-			}
+			]
 
 		switch(args[0]) {
 			default:
@@ -137,20 +137,20 @@ module.exports = {
 				const rollString = cf.roll("1d20+" + args[1]);
 				const result = rollString.split(" ").pop();
 
-				const diff = data.field_c;
-				const throwDistance = scores.diff.distance;
+				const diff = parseInt(data.field_c);
+				const throwDistance = scores[diff-1].distance;
 
 				async function checkScore(result, throwDifficulty) {
 					const n = parseInt(result);
-					if (n >= scores.throwDifficulty.scoredcs.fifty) {
+					if (n >= scores[throwDifficulty-1].scoredcs.fifty) {
 						return 50;
-					} else if (n >= scores.throwDifficulty.scoredcs.thirty) {
+					} else if (n >= scores[throwDifficulty-1].scoredcs.thirty) {
 						return 30;
-					} else if (n >= scores.throwDifficulty.scoredcs.twenty) {
+					} else if (n >= scores[throwDifficulty-1].scoredcs.twenty) {
 						return 20;
-					} else if (n >= scores.throwDifficulty.scoredcs.ten) {
+					} else if (n >= scores[throwDifficulty-1].scoredcs.ten) {
 						return 10;
-					} else if (n >= scores.throwDifficulty.scoredcs.one) {
+					} else if (n >= scores[throwDifficulty-1].scoredcs.one) {
 						return 1;
 					} else {
 						return 0;
