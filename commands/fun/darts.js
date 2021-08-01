@@ -165,6 +165,8 @@ module.exports = {
 				{
 					"content": `<@${message.author.id}> throws a dart!`,
 					"embed": {
+					  "title": `Throw ${throwNumber} out of 5`,
+					  "description": rollString, 
 					  "color": 11087441,
 					  "footer": {
 						"icon_url": message.author.defaultAvatarURL,
