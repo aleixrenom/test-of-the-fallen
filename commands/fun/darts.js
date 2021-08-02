@@ -39,7 +39,7 @@ module.exports = {
 					"name": "Hard",
 					"distance": "11ft",
 					"scoredcs": {
-						"fifty": "25",
+						"fifty": "24",
 						"thirty": "21",
 						"twenty": "18",
 						"ten": "15",
@@ -62,8 +62,8 @@ module.exports = {
 						"value": "Initiates or restarts a game of darts with 5 throws. The optional difficulties are: 1 to throw from a distance of 5ft, 2 to throw from a distance of 8ft (the default), and 3 to throw from a distance of 11ft."
 					  },
 					  {
-						"name": "+darts throw [modifier]",
-						"value": "The darts modifier is your dexterity modifier, and you can add your proficiency modifier if you have proficiency with simple weapons or with darts in particular."
+						"name": "+darts throw [dex/str mod]",
+						"value": "The darts modifier is your dexterity or strength modifier, and you cannot have advantage nor increase the modifier of the roll in any way."
 					  },
 					  {
 						"name": "+darts score",
