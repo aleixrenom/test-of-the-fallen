@@ -51,7 +51,7 @@ module.exports = {
 		switch(args[0]) {
 			default:
 				const helpEmbed = {
-					"color": 13569193,
+					"color": "#A92E51",
 					"author": {
 					  "name": "Available arguments",
 					  "icon_url": "https://img.icons8.com/emoji/452/bullseye.png"
