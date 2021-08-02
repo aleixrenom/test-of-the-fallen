@@ -175,7 +175,7 @@ module.exports = {
 						{ name: 'Total game score', value: gameScore },
 						{ name: 'Throw distance', value: throwDistance }
 					)
-					.setFooter(message.member.nickname, message.author.defaultAvatarURL)
+					.setFooter(message.member.nickname, message.author.displayAvatarURL())
 
 				message.channel.send(throwEmbed)
 
@@ -217,7 +217,7 @@ module.exports = {
 					.setDescription("Points received depending on the game's difficulty and the throw result.")
 					.setThumbnail('https://img.icons8.com/emoji/452/bullseye.png')
 					.addFields(fields.Easy, fields.Medium, fields.Hard)
-					.setFooter(message.member.nickname, message.author.defaultAvatarURL);
+					.setFooter(message.member.nickname, message.author.displayAvatarURL());
 
 				message.channel.send(dcsEmbed);
 
