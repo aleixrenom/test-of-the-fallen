@@ -94,7 +94,7 @@ module.exports = {
 						if (data[0] != undefined) { // if this exists in the table...
 							message.channel.send("Previously active game restarted.");
 						} else { // if there's nothing with that name in the table...
-							message.channel.send("Darts game started, you can now use `+darts throw [modifier]` to throw a dart."); 
+							message.channel.send("Darts game started, you can now use `+darts throw [dex/str mod]` to throw a dart."); 
 						}
 
 						const selectedDificulty = args[1];
@@ -188,6 +188,8 @@ module.exports = {
 					await qh.setStorage(message.author.id, throwsRemaining, gameScore, data[0].field_c);
 				}
 
+				message.delete();
+
 				break;
 			case "score":
 				const scoreData = await qh.getStorage(message.author.id);
@@ -217,7 +219,7 @@ module.exports = {
 					.setDescription("Points received depending on the game's difficulty and the throw result.")
 					.setThumbnail('https://img.icons8.com/emoji/452/bullseye.png')
 					.addFields(fields.Easy, fields.Medium, fields.Hard)
-					.setFooter(message.member.nickname, message.author.displayAvatarURL());
+					.setFooter(message.author.tag, message.author.displayAvatarURL());
 
 				message.channel.send(dcsEmbed);
 
