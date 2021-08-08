@@ -175,7 +175,7 @@ module.exports = {
 						{ name: 'Total game score', value: gameScore },
 						{ name: 'Throw distance', value: throwDistance }
 					)
-					.setFooter(message.member.nickname, message.author.displayAvatarURL())
+					.setFooter(message.author.tag, message.author.displayAvatarURL())
 
 				message.channel.send(throwEmbed)
 
