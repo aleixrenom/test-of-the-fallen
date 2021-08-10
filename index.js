@@ -1,12 +1,20 @@
 // Invitation link: https://discord.com/oauth2/authorize?client_id=812291101934616587&scope=bot
 const fs = require('fs');
-const Discord = require('discord.js');
+const { Client, Collection, Intents } = require('discord.js');
 const cf = require('./components/commonFunctions.js');
 // const qh = require('./components/queryHelper.js');
 const scheduling = require('./components/scheduling.js');
 
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const myIntents = new Intents([
+	Intents.FLAGS.GUILDS,
+	Intents.FLAGS.GUILD_MEMBERS,
+	Intents.FLAGS.GUILD_INTEGRATIONS,
+	Intents.FLAGS.GUILD_MESSAGES,
+	Intents.FLAGS.DIRECT_MESSAGES,
+	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
+])
+const client = new Client({ intents: myIntents });
+client.commands = new Collection();
 cf.client = client;
 
 const commandFolders = fs.readdirSync('./commands');
@@ -19,7 +27,7 @@ for (const folder of commandFolders) {
 	}
 }
 
-const cooldowns = new Discord.Collection();
+const cooldowns = new Collection();
 
 client.once('ready', () => {
 	scheduling.turnOnSchedules();
@@ -59,7 +67,7 @@ client.on('message', message => {
 	}
 
 	if (!cooldowns.has(command.name)) {
-		cooldowns.set(command.name, new Discord.Collection());
+		cooldowns.set(command.name, new Collection());
 	}
 
 	const now = Date.now();
