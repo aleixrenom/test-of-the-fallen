@@ -46,13 +46,13 @@ client.on('messageCreate', message => {
 	if (!command) return;
 
 	if (command.guildOnly && message.channel.type === 'dm') {
-		return message.reply({ content: 'I can\'t execute that command inside DMs!', allowedMentions: { repliedUser: false }});
+		return message.reply({ content: 'I can\'t execute that command inside DMs!', allowedMentions: { repliedUser: false }}).then().catch(e => console.error(e));
 	}
 
 	if (command.permissions) {
 		const authorPerms = message.channel.permissionsFor(message.author);
 		if (!authorPerms || !authorPerms.has(command.permissions)) {
-			return message.reply({ content: 'You can not do this!', allowedMentions: { repliedUser: false }});
+			return message.reply({ content: 'You can not do this!', allowedMentions: { repliedUser: false }}).then().catch(e => console.error(e));
 		}
 	}
 
@@ -63,7 +63,7 @@ client.on('messageCreate', message => {
 			reply += `\nThe proper usage would be: \`${process.env.PREFIX}${command.name} ${command.usage}\``;
 		}
 
-		return message.channel.send(reply);
+		return message.channel.send(reply).then().catch(e => console.error(e));
 	}
 
 	if (!cooldowns.has(command.name)) {
@@ -79,7 +79,7 @@ client.on('messageCreate', message => {
 
 		if (now < expirationTime) {
 			const timeLeft = (expirationTime - now) / 1000;
-			return message.channel.send(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+			return message.channel.send(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`).then().catch(e => console.error(e));
 		}
 	}
 
@@ -90,7 +90,7 @@ client.on('messageCreate', message => {
 		command.execute(message, args);
 	} catch (error) {
 		console.error("Error executing the command: " + error);
-		message.channel.send('There was an error trying to execute that command!');
+		message.channel.send('There was an error trying to execute that command!').then().catch(e => console.error(e));
 	}
 });
 

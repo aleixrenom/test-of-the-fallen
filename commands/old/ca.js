@@ -21,7 +21,7 @@ module.exports = {
 			else if (args[1] == 11) maxDieFaces = 91;
 			else if (args[1] == 12) maxDieFaces = 100;
 			else {
-				message.channel.send("Error: invalid stage number.");
+				message.channel.send("Error: invalid stage number.").then().catch(e => console.error(e));
 				return;
 			}
 
@@ -67,12 +67,12 @@ module.exports = {
 			  .setDescription(cdataFile.chaosEffectsTable[croll].effect);
 			
 			if (cdataFile.chaosEffectsTable[croll].rolls === undefined || cdataFile.chaosEffectsTable[croll].rolls == 0) {
-				message.channel.send({ embeds: [csEmbed] });
+				message.channel.send({ embeds: [csEmbed] }).then().catch(e => console.error(e));
 			} else {
 				cdataFile.chaosEffectsTable[croll].rolls.forEach(element => {
 					csEmbed.addField(element.title, cf.roll(element.roll));
 				});
-				message.channel.send({ embeds: [csEmbed] });
+				message.channel.send({ embeds: [csEmbed] }).then().catch(e => console.error(e));
 			}
 			
 		break;
@@ -97,7 +97,7 @@ module.exports = {
 				  }
 				]
 			  };
-			  message.channel.send({ embeds: [embed] });
+			  message.channel.send({ embeds: [embed] }).then().catch(e => console.error(e));
 
 		break;
 		case "avatarspark":
@@ -110,12 +110,12 @@ module.exports = {
 			  .setDescription(dataFile.avatarEffectsTable[roll].effect);
 			
 			if (dataFile.avatarEffectsTable[roll].rolls === undefined || dataFile.avatarEffectsTable[roll].rolls == 0) {
-				message.channel.send({ embeds: [asEmbed] });
+				message.channel.send({ embeds: [asEmbed] }).then().catch(e => console.error(e));
 			} else {
 				dataFile.avatarEffectsTable[roll].rolls.forEach(element => {
 					asEmbed.addField(element.title, cf.roll(element.roll));
 				});
-				message.channel.send({ embeds: [asEmbed] });
+				message.channel.send({ embeds: [asEmbed] }).then().catch(e => console.error(e));
 			}
 
 		break;
@@ -159,7 +159,7 @@ module.exports = {
 			if (parseInt(args[1]) >= 1 && parseInt(args[1]) <= 100) {
         
       } else {
-        message.channel.send("Error: invalid roll number.");
+        message.channel.send("Error: invalid roll number.").then().catch(e => console.error(e));
 				return;
       }
       
@@ -172,16 +172,16 @@ module.exports = {
 			  .setDescription(cdataFileB.chaosEffectsTable[crollB].effect);
 			
 			if (cdataFileB.chaosEffectsTable[crollB].rolls === undefined || cdataFileB.chaosEffectsTable[crollB].rolls == 0) {
-				message.channel.send({ embeds: [csEmbedB] });
+				message.channel.send({ embeds: [csEmbedB] }).then().catch(e => console.error(e));
 			} else {
 				cdataFileB.chaosEffectsTable[crollB].rolls.forEach(element => {
 					csEmbedB.addField(element.title, cf.roll(element.roll));
 				});
-				message.channel.send({ embeds: [csEmbedB] });
+				message.channel.send({ embeds: [csEmbedB] }).then().catch(e => console.error(e));
 			}
     break;
 		default:
-			message.channel.send("The avaliable arguments are:\n`+ca roll [stage]`\n`+ca blast`\n`+ca avatarspark`");
+			message.channel.send("The avaliable arguments are:\n`+ca roll [stage]`\n`+ca blast`\n`+ca avatarspark`").then().catch(e => console.error(e));
 	}
 	},
 };

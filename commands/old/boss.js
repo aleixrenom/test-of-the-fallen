@@ -7,18 +7,18 @@ module.exports = {
 	cooldown: 1,
 	async execute(message, args) {
 		if (!message.member._roles.includes(String(await qh.getId("role", "staff")))) {
-			message.channel.send("This command is only avaliable to Staff.");
+			message.channel.send("This command is only avaliable to Staff.").then().catch(e => console.error(e));
 			return;
 		}
 
 		switch(args[0]) {
 			case("heal"):
 				if (isNaN(parseInt(args[1]))) {
-					message.channel.send("Given value is not a number.");
+					message.channel.send("Given value is not a number.").then().catch(e => console.error(e));
 					return;
 				}
 				if (args.length <= 1) {
-					message.channel.send("Specify an amount of HP to heal.");
+					message.channel.send("Specify an amount of HP to heal.").then().catch(e => console.error(e));
 					return;
 				}
 
@@ -35,21 +35,21 @@ module.exports = {
 						`**Old HP:** ${oldHp}\n` +
 						`**HP healed:** ${args[1]}\n` +
 						`**New HP:** ${newHp}`
-					);
+					).then().catch(e => console.error(e));
 
-					message.channel.send("Boss HP updated successfuly.");
+					message.channel.send("Boss HP updated successfuly.").then().catch(e => console.error(e));
 				} catch(err) {
 					console.error("Error modifying the boss hp: " + err);
-					message.channel.send("Error modifying the boss hp: " + err);
+					message.channel.send("Error modifying the boss hp: " + err).then().catch(e => console.error(e));
 				}
 			break;
 			case("dmg"):
 				if (isNaN(parseInt(args[1]))) {
-					message.channel.send("Given value is not a number.");
+					message.channel.send("Given value is not a number.").then().catch(e => console.error(e));
 					return;
 				}
 				if (args.length <= 1) {
-					message.channel.send("Specify an amount of HP to withdraw.");
+					message.channel.send("Specify an amount of HP to withdraw.").then().catch(e => console.error(e));
 					return;
 				}
 
@@ -66,16 +66,16 @@ module.exports = {
 						`**Old HP:** ${oldHp}\n` +
 						`**Damage:** ${args[1]}\n` +
 						`**New HP:** ${newHp}`
-					);
+					).then().catch(e => console.error(e));
 					
-					message.channel.send("Boss HP updated successfuly.");
+					message.channel.send("Boss HP updated successfuly.").then().catch(e => console.error(e));
 				} catch(err) {
 					console.error("Error modifying the boss hp: " + err);
-					message.channel.send("Error modifying the boss hp: " + err);
+					message.channel.send("Error modifying the boss hp: " + err).then().catch(e => console.error(e));
 				}
 			break;
 			default:
-				message.channel.send("Usage:\n`+boss dmg [damage taken]`\n`+boss heal [health recovered]`")
+				message.channel.send("Usage:\n`+boss dmg [damage taken]`\n`+boss heal [health recovered]`").then().catch(e => console.error(e));
 			break;
 		}
 	},

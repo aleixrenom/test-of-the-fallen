@@ -11,7 +11,7 @@ module.exports = {
 		if (!args.length) {
 			data.push('Here\'s a list of all my commands:');
 			data.push(commands.map(command => command.name).join(', '));
-			data.push(`\nYou can send \`${process.env.PREFIX}help [command name]\` to get info on a specific command!`);
+			data.push(`\nYou can send \`${process.env.PREFIX}help [command name]\` to get info on a specific command!`).then().catch(e => console.error(e));
 
 			return message.author.send(data, { split: true })
 				.then(() => {
@@ -39,6 +39,6 @@ module.exports = {
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
-		message.channel.send(data, { split: true });
+		message.channel.send(data, { split: true }).then().catch(e => console.error(e));
 	},
 };

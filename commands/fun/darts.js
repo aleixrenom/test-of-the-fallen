@@ -76,7 +76,7 @@ module.exports = {
 					]
 				  };
 
-				  message.channel.send({ embeds: [helpEmbed] });
+				  message.channel.send({ embeds: [helpEmbed] }).then().catch(e => console.error(e));
 				break;
 			case "start":
 				try {
@@ -92,9 +92,9 @@ module.exports = {
 					) {
 
 						if (data[0] != undefined) { // if this exists in the table...
-							message.channel.send("Previously active game restarted.");
+							message.channel.send("Previously active game restarted.").then().catch(e => console.error(e));
 						} else { // if there's nothing with that name in the table...
-							message.channel.send("Darts game started, you can now use `+darts throw [dex/str mod]` to throw a dart."); 
+							message.channel.send("Darts game started, you can now use `+darts throw [dex/str mod]` to throw a dart.").then().catch(e => console.error(e)); 
 						}
 
 						const selectedDificulty = args[1];
@@ -104,7 +104,8 @@ module.exports = {
 					// if they have given something that's not a number between 1 and 3...
 					} else if (args[1] != undefined) {
 						message.channel.send("Difficulty level not recognized, please use a number between 1 and 3.")
-							.then(m => setTimeout(() => m.delete(), 5000));
+							.then(m => setTimeout(() => m.delete(), 5000))
+							.catch(e => console.error(e));
 						message.delete();
 						return;
 					} else {
@@ -118,7 +119,7 @@ module.exports = {
 
 				} catch(e) {
 					console.error("Error starting a game of darts: " + e);
-					message.channel.send("Error starting a game of darts: " + e);
+					message.channel.send("Error starting a game of darts: " + e).then().catch(e => console.error(e));
 				}
 				break;
 			case "throw":
@@ -126,14 +127,16 @@ module.exports = {
 
 				if (data[0] == undefined) {
 					message.channel.send("You haven't started a game yet. Use `+darts start [optional difficulty]` to start one.")
-						.then(m => setTimeout(() => m.delete(), 5000));
+						.then(m => setTimeout(() => m.delete(), 5000))
+						.catch(e => console.error(e));
 					message.delete({ timeout: 5000 });
 					return;
 				}
 
 				if (isNaN(args[1])) {
 					message.channel.send("The given modifier is not a number!")
-						.then(m => setTimeout(() => m.delete(), 5000));
+						.then(m => setTimeout(() => m.delete(), 5000))
+						.catch(e => console.error(e));
 					message.delete({ timeout: 5000 });
 					return;
 				}
@@ -177,12 +180,12 @@ module.exports = {
 					)
 					.setFooter(message.author.tag, message.author.displayAvatarURL())
 
-				message.channel.send({ embeds: [throwEmbed] })
+				message.channel.send({ embeds: [throwEmbed] }).then().catch(e => console.error(e));
 
 				const throwsRemaining = parseInt(data[0].field_a) - 1;
 				if (throwsRemaining <= 0) {
 					await qh.deleteStorage(message.author.id);
-					message.channel.send(`Game completed! Your final score is: **${gameScore}**`);
+					message.channel.send(`Game completed! Your final score is: **${gameScore}**`).then().catch(e => console.error(e));
 				} else {
 					// Fields: a = throws remaining, b = current score, c = difficulty
 					await qh.setStorage(message.author.id, throwsRemaining, gameScore, data[0].field_c);
@@ -197,9 +200,9 @@ module.exports = {
 				if (scoreData[0] != undefined) { // if this exists in the table...
 					message.channel.send(
 						`Your current score is **${scoreData[0].field_b}** with **${scoreData[0].field_a}** throws remaining, throwing from a distance of **${scores[parseInt(scoreData[0].field_c)-1].distance}**.`
-					)
+					).then().catch(e => console.error(e))
 				} else { // if there's nothing with that name in the table...
-					message.channel.send("You haven't started a game yet. Use `+darts start [optional difficulty]` to start one."); 
+					message.channel.send("You haven't started a game yet. Use `+darts start [optional difficulty]` to start one.").then().catch(e => console.error(e)); 
 				}
 
 				break;
@@ -221,7 +224,7 @@ module.exports = {
 					.addFields(fields.Easy, fields.Medium, fields.Hard)
 					.setFooter(message.author.tag, message.author.displayAvatarURL());
 
-				message.channel.send({ embeds: [dcsEmbed] });
+				message.channel.send({ embeds: [dcsEmbed] }).then().catch(e => console.error(e));
 
 				break;
 		}

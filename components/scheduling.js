@@ -91,64 +91,64 @@ function checkIfDayMonth() {
 					case 1:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The sun hovers over the horizon in the west, foretelling the coming night.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 2:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The dim rays of the sun can be seen on the east. This cold night is coming to an end.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 3:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The sun is beginning to fall below the landmass, leaving space for the first fully dark night to come.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 4:
 						// cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 						// 	"```\n\
 						// 	X\
 						// 	\n```"
-						// );
+						// ).then().catch(e => console.error(e));
 						break;
 					case 5:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The sunset covers this lands with burning beauty, yet there is a grim feeling in the air...```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 6:
 						// cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 						// 	"```Hopeful rays of light can be seen crawling out over the horizon after this long pitch black night.```"
-						// );
+						// ).then().catch(e => console.error(e));
 						break;
 					case 7:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```As foretold the bright summer sun burns red in the sky, creating the only summer sunset.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 8:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The dawn finally appears and threatens the darkness of these lands with its light.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 9:
 						// cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 						// 	"```X```"
-						// );
+						// ).then().catch(e => console.error(e));
 						break;
 					case 10:
 						// cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 						// 	"```X```"
-						// );
+						// ).then().catch(e => console.error(e));
 						break;
 					case 11:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 						  "```As the sun wanes in the west, a bright white moon starts showing its face under the eastern skies.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 12:
 						// cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 						// 	"```X```"
-						// );
+						// ).then().catch(e => console.error(e));
 						break;
 				}
 			} catch(err) {
@@ -169,62 +169,62 @@ function checkIfDayMonth() {
 					case 1:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The winter's sun rises from the east after a bright full moon night. The promise of snow and peace in the only day of winter fills the people's hearts with joy.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 2:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The sky is covered with red hues as the day falls and the waning gibbous moon peeks its head from the east. Hanging tight to their coats the Elysians return to their homes, dreaming of the first day of spring.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 3:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The first rays of spring shine brightly from the east and bathe this fallen lands with life and color. It won't be long until the plains are covered with flowers and the rains bring life to all flora and fauna.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 4:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The imposing sunset slowly fades on the west, and the crescent moon starts showing itself. The first of the dark nights approaches, and with it a subconscious feeling of unease fills the minds of the inhabitants of these lands.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 5:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The crescent moon retreats to its home past the horizon and the sun of spring returns bright through this lasting sunrise. It won't be long until summer comes, so the Elysians strive to take advantage of this last beautiful month of spring.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 6:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The sun sets on the west to make way for the summer to come, but no moon raises this time. The lands are progressively covered with pitch-black darkness, and people huggle around any light source they have, not daring to step into this summer's moonless obscurity.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 7:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The twilight of this moonless night shines over the horizon, allowing the only summer's sun to relieve the citizens of this world with it bright and powerful magnificence. Everyone will rejoice in the warm summer's festivities until the darkness comes around once more.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 8:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The summer sun finally disappears and the waxing crescent moon peeks its head over the Fallen. This night will be the last dark night of the year, and with all summer festivities celebrated, the citizens leave the parks and plazas and retrieve to their homes.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 9:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The first sun of autumn comes back around, and with it brings the chilly winds from the north and the falling brown leaves of the trees that create a beautiful carpet of colors in the forests. The Elysians start taking out their jerseys and jackets and get ready for a cloudy month.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 10:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```X```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 11:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The autum's last sun shows itself over the horizon as the leaves of the caduceous trees start slowly disappearing. The sky will be clouded and the air chilly, so the citizens are already getting the winter clothes out of the cabinets.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 					case 12:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
 							"```The big round bright moon hovers ominous over the horizon: this is the last month of the year, and the month of the full moon. Everything is covered in dim light; thin fog crawls over the wilds, howls of unknown origin are heard in the distance and shivers go through explorers' spines while the moon slowly crawls its way to its resting place in the west.```"
-						);
+						).then().catch(e => console.error(e));
 						break;
 				}
 			} catch(err) {

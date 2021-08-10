@@ -22,7 +22,7 @@ module.exports = {
 		.setColor(data.color);
 
 		// post it in the weather channel
-		cf.client.channels.cache.get(data.weatherchannel).send(todayWeatherEmbed)
+		cf.client.channels.cache.get(data.weatherchannel).send({ embeds: [todayWeatherEmbed] })
 			.then()
 			.catch(err => console.error(err));
 
@@ -47,8 +47,8 @@ module.exports = {
 		.setColor(rolledWeather.color);
 
 		// post it in the forecast channel
-		cf.client.channels.cache.get(data.forecastchannel).send("**Next weather:**");
-		cf.client.channels.cache.get(data.forecastchannel).send(tomorrowWeatherEmbed)
+		cf.client.channels.cache.get(data.forecastchannel).send("**Next weather:**").then().catch(e => console.error(e));
+		cf.client.channels.cache.get(data.forecastchannel).send({ embeds: [tomorrowWeatherEmbed] })
 			.then()
 			.catch(err => console.error(err));
 
@@ -59,13 +59,13 @@ module.exports = {
 		switch (args[0]) {
 			case "forceRoll":
 				if (!message.member._roles.includes(String(await qh.getId("role", "admin")))) {
-					message.channel.send("This command is only avaliable to Admins.");
+					message.channel.send("This command is only avaliable to Admins.").then().catch(e => console.error(e));
 					return;
 				} else {
 					let data = await qh.getWeatherSchedule();
 
 					if (data.status === "off") {
-						message.channel.send("The weather scheduling is turned off.");
+						message.channel.send("The weather scheduling is turned off.").then().catch(e => console.error(e));
 						return;
 					} else {
 						await this.rollWeather();
@@ -75,7 +75,7 @@ module.exports = {
 			case "on":
 				if (!message.member._roles.includes(String(await qh.getId("role", "admin"))) && 
 					!message.member._roles.includes(String(await qh.getId("role", "weatherman")))) {
-					message.channel.send("This command is only avaliable to Admins and Weatherman.");
+					message.channel.send("This command is only avaliable to Admins and Weatherman.").then().catch(e => console.error(e));
 					return;
 				}
 
@@ -83,23 +83,23 @@ module.exports = {
 					let data = await qh.getWeatherSchedule();
 
 					if (data.status === "on") {
-						message.channel.send("The scheduling is already on.");
+						message.channel.send("The scheduling is already on.").then().catch(e => console.error(e));
 						return;
 					}
 
 					data.status = "on";
 					await qh.updateWeatherSchedule(data);
 
-					message.channel.send("Scheduling turned on.")
+					message.channel.send("Scheduling turned on.").then().catch(e => console.error(e));
 				} catch(err) {
-					message.channel.send("There was an error turning the scheduling on.");
+					message.channel.send("There was an error turning the scheduling on.").then().catch(e => console.error(e));
 					console.log("There was an error turning the scheduling on: " + err);
 				}
 				break;
 			case "off":
 				if (!message.member._roles.includes(String(await qh.getId("role", "admin"))) && 
 					!message.member._roles.includes(String(await qh.getId("role", "weatherman")))) {
-					message.channel.send("This command is only avaliable to Admins and Weatherman.");
+					message.channel.send("This command is only avaliable to Admins and Weatherman.").then().catch(e => console.error(e));
 					return;
 				}
 
@@ -107,68 +107,68 @@ module.exports = {
 					let data = await qh.getWeatherSchedule();
 
 					if (data.status === "off") {
-						message.channel.send("The scheduling is already off.");
+						message.channel.send("The scheduling is already off.").then().catch(e => console.error(e));
 						return;
 					}
 
 					data.status = "off";
 					await qh.updateWeatherSchedule(data);
 
-					message.channel.send("Scheduling turned off.")
+					message.channel.send("Scheduling turned off.").then().catch(e => console.error(e));
 				} catch(err) {
-					message.channel.send("There was an error turning the scheduling off.");
+					message.channel.send("There was an error turning the scheduling off.").then().catch(e => console.error(e));
 					console.log("There was an error turning the scheduling off: " + err);
 				}
 				break;
 			case "status":
 				if (!message.member._roles.includes(String(await qh.getId("role", "admin"))) && 
 					!message.member._roles.includes(String(await qh.getId("role", "weatherman")))) {
-					message.channel.send("This command is only avaliable to Admins and Weatherman.");
+					message.channel.send("This command is only avaliable to Admins and Weatherman.").then().catch(e => console.error(e));
 					return;
 				}
 
 				try {
 					let data = await qh.getWeatherSchedule();
-					message.channel.send("The weather scheduling is " + data.status + ".");
+					message.channel.send("The weather scheduling is " + data.status + ".").then().catch(e => console.error(e));
 				} catch(err) {
-					message.channel.send("There was an error checking the scheduling status.");
+					message.channel.send("There was an error checking the scheduling status.").then().catch(e => console.error(e));
 					console.log("There was an error checking the scheduling status: " + err);
 				}
 				break;
 			case "changeWeatherChannel":
 				if (!message.member._roles.includes(String(await qh.getId("role", "admin")))) {
-					message.channel.send("This command is only avaliable to Admins.");
+					message.channel.send("This command is only avaliable to Admins.").then().catch(e => console.error(e));
 					return;
 				}
 
 				try {
 					let data = await qh.getWeatherSchedule();
 					data.weatherchannel = message.channel.id;
-					message.channel.send("Weather channel changed to this one.");
+					message.channel.send("Weather channel changed to this one.").then().catch(e => console.error(e));
 					await qh.updateWeatherSchedule(data);
 				} catch (err) {
-					message.channel.send("There was an error trying to set the weather channel: " + err);
+					message.channel.send("There was an error trying to set the weather channel: " + err).then().catch(e => console.error(e));
 					console.error("There was an error trying to set the weather channel: " + err);
 				}
 				break;
 			case "changeForecastChannel":
 				if (!message.member._roles.includes(String(await qh.getId("role", "admin")))) {
-					message.channel.send("This command is only avaliable to Admins.");
+					message.channel.send("This command is only avaliable to Admins.").then().catch(e => console.error(e));
 					return;
 				}
 
 				try {
 					let data = await qh.getWeatherSchedule();
 					data.forecastchannel = message.channel.id;
-					message.channel.send("Forecast channel changed to this one.");
+					message.channel.send("Forecast channel changed to this one.").then().catch(e => console.error(e));
 					await qh.updateWeatherSchedule(data);
 				} catch (err) {
-					message.channel.send("There was an error trying to set the forecast channel: " + err);
+					message.channel.send("There was an error trying to set the forecast channel: " + err).then().catch(e => console.error(e));
 					console.error("There was an error trying to set the forecast channel: " + err);
 				}
 				break;
 			default:
-				message.channel.send("Avaliable arguments: on, off, status.\nAdmin only arguments: forceRoll, changeWeatherChannel, changeForecastChannel.");
+				message.channel.send("Avaliable arguments: on, off, status.\nAdmin only arguments: forceRoll, changeWeatherChannel, changeForecastChannel.").then().catch(e => console.error(e));
 				break;
 		}
 	}
