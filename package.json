@@ -19,7 +19,7 @@
   "dependencies": {
     "d20": "^1.4.1",
     "discord-fetch-all": "^3.0.2",
-    "discord.js": "^12.5.1",
+    "discord.js": "^12.5.3",
     "dotenv": "^8.6.0",
     "fs": "0.0.1-security",
     "knex": "^0.21.17",
