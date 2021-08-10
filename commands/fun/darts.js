@@ -197,7 +197,7 @@ module.exports = {
 			case "score":
 				const scoreData = await qh.getStorage(message.author.id);
 
-				console.log(message.author.tag.toString() + " of type " + typeof message.author.tag.toString())
+				console.log(message.author.displayAvatarURL() + " of type " + typeof message.author.displayAvatarURL())
 
 				if (scoreData[0] != undefined) { // if this exists in the table...
 					message.channel.send(
