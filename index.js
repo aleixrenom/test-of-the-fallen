@@ -95,13 +95,10 @@ client.on('messageCreate', message => {
 });
 
 client.on('threadCreate', thread => {
-	if (thread.joinable) {
+	if (thread.joinable)
 		thread.join()
 			.then(threadChannel => console.log("Joined thread " + threadChannel.name))
 			.catch(e => console.error("Error trying to join a thread: " + e));
-	} else {
-		console.log("Thread not joinable.")
-	}
 })
 
 client.login(process.env.TOKEN);
