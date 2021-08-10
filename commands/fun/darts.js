@@ -197,6 +197,8 @@ module.exports = {
 			case "score":
 				const scoreData = await qh.getStorage(message.author.id);
 
+				console.log(message.author.tag.toString() + " of type " + typeof message.author.tag.toString())
+
 				if (scoreData[0] != undefined) { // if this exists in the table...
 					message.channel.send(
 						`Your current score is **${scoreData[0].field_b}** with **${scoreData[0].field_a}** throws remaining, throwing from a distance of **${scores[parseInt(scoreData[0].field_c)-1].distance}**.`
