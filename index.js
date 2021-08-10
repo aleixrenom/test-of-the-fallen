@@ -86,4 +86,8 @@ client.on('message', message => {
 	}
 });
 
+client.on('threadCreate', thread => {
+	if (thread.joinable) await thread.join();
+})
+
 client.login(process.env.TOKEN);
