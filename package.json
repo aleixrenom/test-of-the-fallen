@@ -2,6 +2,9 @@
   "name": "bot-of-the-fallen",
   "version": "1.0.0",
   "description": "Discord bot for the Realm of the Fallen discord server",
+  "engines": {
+	  "node": "16.6.1"
+  },
   "main": "index.js",
   "scripts": {
     "test": "+t"
