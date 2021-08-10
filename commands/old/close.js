@@ -11,7 +11,7 @@ module.exports = {
 			return;
 		}
 
-		if (message.channel.parentID != '758053464491425966') {
+		if (message.channel.parentId != '758053464491425966') {
 			message.channel.send("This command is only usable in the Island Adventures category.").then().catch(e => console.error(e));
 			return;
 		}
