@@ -67,12 +67,12 @@ module.exports = {
 			  .setDescription(cdataFile.chaosEffectsTable[croll].effect);
 			
 			if (cdataFile.chaosEffectsTable[croll].rolls === undefined || cdataFile.chaosEffectsTable[croll].rolls == 0) {
-				message.channel.send(csEmbed);
+				message.channel.send({ embeds: [csEmbed] });
 			} else {
 				cdataFile.chaosEffectsTable[croll].rolls.forEach(element => {
 					csEmbed.addField(element.title, cf.roll(element.roll));
 				});
-				message.channel.send(csEmbed);
+				message.channel.send({ embeds: [csEmbed] });
 			}
 			
 		break;
@@ -97,7 +97,7 @@ module.exports = {
 				  }
 				]
 			  };
-			  message.channel.send({ embed });
+			  message.channel.send({ embeds: [embed] });
 
 		break;
 		case "avatarspark":
@@ -110,12 +110,12 @@ module.exports = {
 			  .setDescription(dataFile.avatarEffectsTable[roll].effect);
 			
 			if (dataFile.avatarEffectsTable[roll].rolls === undefined || dataFile.avatarEffectsTable[roll].rolls == 0) {
-				message.channel.send(asEmbed);
+				message.channel.send({ embeds: [asEmbed] });
 			} else {
 				dataFile.avatarEffectsTable[roll].rolls.forEach(element => {
 					asEmbed.addField(element.title, cf.roll(element.roll));
 				});
-				message.channel.send(asEmbed);
+				message.channel.send({ embeds: [asEmbed] });
 			}
 
 		break;
@@ -172,12 +172,12 @@ module.exports = {
 			  .setDescription(cdataFileB.chaosEffectsTable[crollB].effect);
 			
 			if (cdataFileB.chaosEffectsTable[crollB].rolls === undefined || cdataFileB.chaosEffectsTable[crollB].rolls == 0) {
-				message.channel.send(csEmbedB);
+				message.channel.send({ embeds: [csEmbedB] });
 			} else {
 				cdataFileB.chaosEffectsTable[crollB].rolls.forEach(element => {
 					csEmbedB.addField(element.title, cf.roll(element.roll));
 				});
-				message.channel.send(csEmbedB);
+				message.channel.send({ embeds: [csEmbedB] });
 			}
     break;
 		default:

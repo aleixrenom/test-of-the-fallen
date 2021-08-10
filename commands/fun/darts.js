@@ -76,7 +76,7 @@ module.exports = {
 					]
 				  };
 
-				  message.channel.send({ embed: helpEmbed });
+				  message.channel.send({ embeds: [helpEmbed] });
 				break;
 			case "start":
 				try {
@@ -104,7 +104,7 @@ module.exports = {
 					// if they have given something that's not a number between 1 and 3...
 					} else if (args[1] != undefined) {
 						message.channel.send("Difficulty level not recognized, please use a number between 1 and 3.")
-							.then(m => m.delete({ timeout: 5000 }));
+							.then(m => setTimeout(() => m.delete(), 5000));
 						message.delete();
 						return;
 					} else {
@@ -126,14 +126,14 @@ module.exports = {
 
 				if (data[0] == undefined) {
 					message.channel.send("You haven't started a game yet. Use `+darts start [optional difficulty]` to start one.")
-						.then(m => m.delete({ timeout: 5000 }));
+						.then(m => setTimeout(() => m.delete(), 5000));
 					message.delete({ timeout: 5000 });
 					return;
 				}
 
 				if (isNaN(args[1])) {
 					message.channel.send("The given modifier is not a number!")
-						.then(m => m.delete({ timeout: 5000 }));
+						.then(m => setTimeout(() => m.delete(), 5000));
 					message.delete({ timeout: 5000 });
 					return;
 				}
@@ -177,7 +177,7 @@ module.exports = {
 					)
 					.setFooter(message.author.tag, message.author.displayAvatarURL())
 
-				message.channel.send(throwEmbed)
+				message.channel.send({ embeds: [throwEmbed] })
 
 				const throwsRemaining = parseInt(data[0].field_a) - 1;
 				if (throwsRemaining <= 0) {
@@ -221,7 +221,7 @@ module.exports = {
 					.addFields(fields.Easy, fields.Medium, fields.Hard)
 					.setFooter(message.author.tag, message.author.displayAvatarURL());
 
-				message.channel.send(dcsEmbed);
+				message.channel.send({ embeds: [dcsEmbed] });
 
 				break;
 		}
