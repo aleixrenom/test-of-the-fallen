@@ -9,6 +9,22 @@ module.exports = {
 		// message.channel.send(message.channel.parent.children.size).then().catch(err => console.error(err));
 		message.channel.send('Pong.').then().catch(e => console.error(e));
 
+		function checkIfDayMonth() {
+			try {
+				const month = new Date().getMonth() + 1;
+		
+				if (month % 2 == 0) {
+					// even, so night
+					return false;
+				} else {
+					// odd, so day
+					return true;
+				}
+			} catch(err) {
+				console.log("There was an error in scheduling with checkIfDayMonth() - " + err)
+			}
+		}
+		
 		function changeServerIcon() {
 			const data = cf.readDataFile('data');
 			try {
