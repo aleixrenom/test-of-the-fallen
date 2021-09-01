@@ -8,5 +8,22 @@ module.exports = {
 	async execute(message) {
 		// message.channel.send(message.channel.parent.children.size).then().catch(err => console.error(err));
 		message.channel.send('Pong.').then().catch(e => console.error(e));
+
+		function changeServerIcon() {
+			const data = cf.readDataFile('data');
+			try {
+			   if (checkIfDayMonth()) {
+				cf.client.guilds.fetch(data.rotfId)
+					.then(rotf => rotf.setIcon(data.images.day));
+			   } else {
+				cf.client.guilds.fetch(data.rotfId)
+					.then(rotf => rotf.setIcon(data.images.night));
+			   }
+			} catch(err) {
+			   console.log("There was an error in scheduling with changeServerIcon() - " + err)
+		   }
+		}
+
+		changeServerIcon();
 	},
 };
