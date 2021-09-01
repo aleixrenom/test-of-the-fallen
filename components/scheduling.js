@@ -66,18 +66,19 @@ function checkIfDayMonth() {
 	}
 }
 
- function changeServerIcon() {
-	 try {
-		const rotf = cf.client.guilds.fetch(data.rotfId);
-		if (checkIfDayMonth()) {
-		   rotf.setIcon(data.images.day);
-		} else {
-		   rotf.setIcon(data.images.night);
-		}
-	 } catch(err) {
-		console.log("There was an error in scheduling with changeServerIcon() - " + err)
-	}
- }
+function changeServerIcon() {
+	try {
+	   if (checkIfDayMonth()) {
+		cf.client.guilds.fetch(data.rotfId)
+			.then(rotf => rotf.setIcon(data.images.day));
+	   } else {
+		cf.client.guilds.fetch(data.rotfId)
+			.then(rotf => rotf.setIcon(data.images.night));
+	   }
+	} catch(err) {
+	   console.log("There was an error in scheduling with changeServerIcon() - " + err)
+   }
+}
 
  // https://i.imgur.com/vLJ9aDr.png
  function announceLastDayOfMonth() {
