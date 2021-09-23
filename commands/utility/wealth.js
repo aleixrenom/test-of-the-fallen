@@ -2,8 +2,8 @@ const qh = require('../../components/queryHelper.js');
 const cf = require('../../components/commonFunctions.js');
 
 module.exports = {
-	name: 'ping',
-	description: 'Ping!',
+	name: 'wealth',
+	description: 'Returns the correct wealth for vending machine event.',
 	cooldown: 1,
 	async execute(message, args) {
 		
@@ -12,7 +12,7 @@ module.exports = {
 			return inputMoney*multiplier;
 		}
 
-		if (parseInt(args[0]) != NaN && parseInt(args[1]) != NaN) {
+		if (parseInt(args[0]) != NaN && parseInt(args[1]) != NaN && args[0] != undefined) {
 			message.channel.send("Return is " + checkReturn(parseInt(args[0]), parseInt(args[1]))).then().catch(e => console.error(e));
 		} else {
 			message.channel.send("Usage is `+wealth [roll] [amount]`").then().catch(e => console.error(e));
