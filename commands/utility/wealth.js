@@ -12,7 +12,7 @@ module.exports = {
 			return inputMoney*multiplier;
 		}
 
-		if (parseInt(args[0]) != NaN && parseInt(args[1]) != NaN && args[0] != undefined) {
+		if (!isNaN(args[0]) && !isNaN(args[1]) && args[0] != undefined) {
 			message.channel.send("Return is " + checkReturn(parseInt(args[0]), parseInt(args[1]))).then().catch(e => console.error(e));
 		} else {
 			message.channel.send("Usage is `+wealth [roll] [amount]`").then().catch(e => console.error(e));
