@@ -214,7 +214,7 @@ function changeServerIcon() {
 						break;
 					case 10:
 						cf.client.channels.cache.get(data.inWorldHappeningsId).send(
-							"```X```"
+							"```The sun fades, and in its wake, the waxing gibbous moon marches in, the only moon of autumn. The brown leaves of the nearby forests flow in the wind and form beautiful carpets in the nearby forests, being able to be seen only through the dim light of the moon.```"
 						).then().catch(e => console.error(e));
 						break;
 					case 11:
