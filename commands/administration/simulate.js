@@ -1,5 +1,6 @@
 const qh = require('../../components/queryHelper.js');
 const cf = require('../../components/commonFunctions.js');
+const { cp } = require('fs');
 
 module.exports = {
 	name: 'simulate',
@@ -26,15 +27,51 @@ module.exports = {
 			return attacksArray;
 		}
 
+		const getDamagingAttack = (attack) => {
+			switch (attack) {
+				case 1:
+					return 2;
+					break;
+				case 2:
+					return 3;
+					break;
+				case 3:
+					return 1;
+					break;
+				default:
+					return 0;
+					break;
+			}
+		}
+		
+		// returns true if players win
 		const simulateCombat = (ikuHp) => {
 			let combatFinished = false;
 			let enemyHp = ikuHp;
+			let playersHp = Array(7).fill(3);
 
-			// while (!combatFinished) {
+			while (!combatFinished) {
+				let playersAttacks = generateAttacks(playersHp.length);
+				let ikuAttack = cf.rnd(1,3);
 
-			// }
+				playersAttacks.forEach(playerAttack => {
+					if (playerAttack === getDamagingAttack(ikuAttack)) enemyHp -= 1;
+				})
+
+				if (enemyHp <= 0) return true;
+
+				playersAttacks.forEach((playerAttack, index) => {
+					if (ikuAttack === getDamagingAttack(playerAttack)) playersHp[index] -= 1;
+				})
+
+				playersHp = playersHp.filter(e => e > 0);
+
+				if (playersHp.length <= 0) combatFinished = true;
+			}
+
+			return false;
 		}
 
-		message.channel.send(Array(7).fill(3).toString()).then().catch(e => console.error(e));
+		message.channel.send(simulateCombat(15)).then().catch(e => console.error(e));
 	},
 };
