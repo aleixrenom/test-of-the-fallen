@@ -8,6 +8,7 @@ module.exports = {
 	description: 'Allows you to play a game of darts.',
 	cooldown: 1,
 	async execute(message, args) {
+		return
 		const scores = 
 			[
 				{ 
