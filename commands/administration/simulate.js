@@ -1,3 +1,4 @@
+const qh = require('../../components/queryHelper.js');
 const cf = require('../../components/commonFunctions.js');
 
 module.exports = {
