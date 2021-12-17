@@ -95,9 +95,7 @@ module.exports = {
 			}
 
 			const returnString = `
-			I ran ${args[0]} simulations setting Iku-turso's HP to ${args[1]}.
-			Players won ${playerVictories} times.
-			Iku-turso won ${ikuVictories} times.
+			I ran ${args[0]} simulations setting Iku-turso's HP to ${args[1]}.\nPlayers won ${playerVictories} times.\nIku-turso won ${ikuVictories} times.
 			`;
 
 			message.channel.send(returnString).then().catch(e => console.error(e));
