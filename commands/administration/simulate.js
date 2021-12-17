@@ -11,8 +11,11 @@ module.exports = {
 			return;
 		}
 
-		message.channel.send('Received.').then().catch(e => console.error(e));
-
+		/**
+		 * 
+		 * @param {Int} players 
+		 * @returns {Array} Array of rolls between 1 and 3 equal to players
+		 */
 		const generateAttacks = (players) => {
 			let attacksArray = [];
 
@@ -20,9 +23,18 @@ module.exports = {
 				attacksArray.push(cf.rnd(1,3));
 			}
 
-			return attacksArray.toString();
+			return attacksArray;
 		}
 
-		message.channel.send(generateAttacks(7)).then().catch(e => console.error(e));
+		const simulateCombat = (ikuHp) => {
+			let combatFinished = false;
+			let enemyHp = ikuHp;
+
+			// while (!combatFinished) {
+
+			// }
+		}
+
+		message.channel.send(Array(7).fill(3).toString()).then().catch(e => console.error(e));
 	},
 };
