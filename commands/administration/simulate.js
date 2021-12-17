@@ -72,6 +72,6 @@ module.exports = {
 			return false;
 		}
 
-		message.channel.send(simulateCombat(15)).then().catch(e => console.error(e));
+		message.channel.send(simulateCombat(15) ? "Players win" : "Iku wins").then().catch(e => console.error(e));
 	},
 };
